@@ -18,6 +18,7 @@ next-env.d.ts
 data/cache/
 data/ocr/
 data/llm_cache/
+*.local.txt
 
 # Editors / OS
 .vscode/
