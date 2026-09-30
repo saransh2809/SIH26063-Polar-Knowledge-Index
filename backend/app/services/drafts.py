@@ -111,7 +111,8 @@ CHECK_SYSTEM = (
     "supported: every factual detail (names, numbers, dates, places, causes) is stated in the cited passages.\n"
     "partial: the main point is supported but some detail is not, or the sentence overstates the passage.\n"
     "unsupported: the passages do not state it, or contradict it.\n"
-    "The sentence may be in Hindi while passages are in English; compare meaning. "
+    "The sentence may be in Hindi while passages are in English; compare meaning, and treat a mistranslated "
+    "technical term (e.g. 'austral' rendered as 'Australian') as unsupported. "
     "Give a one-line reason naming what is or is not in the passage."
 )
 CHECK_SCHEMA = {

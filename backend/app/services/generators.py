@@ -222,7 +222,11 @@ TRANSLATE_SYSTEM = (
     "Translate outreach text from English to clear, simple standard Hindi (Devanagari) for Indian students. "
     "Translate meaning faithfully; add nothing and drop nothing. Keep numbers, units, station names "
     "(Dakshin Gangotri, Maitri, Bharati, Himadri, Himansh) and scientific terms recognisable; you may add the "
-    "English term in brackets after a technical Hindi word."
+    "English term in brackets after a technical Hindi word.\n"
+    "Glossary (use these; 'austral' means southern-hemisphere, never 'Australian'):\n"
+    "austral summer = दक्षिणी गोलार्ध की गर्मी (austral summer); glacier = हिमनद (glacier); "
+    "glacier snout = हिमनद का अग्रभाग (snout); ice shelf = हिम शेल्फ (ice shelf); "
+    "iceberg = हिमशैल (iceberg); expedition = अभियान; recession (of a glacier) = पीछे हटना (recession)."
 )
 TRANSLATE_SCHEMA = {
     "type": "object",
