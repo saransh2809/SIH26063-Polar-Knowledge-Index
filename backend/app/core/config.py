@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     llm_model: str | None = None
 
     embedding_model: str = "intfloat/multilingual-e5-base"
+    # Refusal thresholds on cosine similarity (0-1). Calibrated in docs/decisions.md.
+    qa_min_similarity: float = 0.82
+    qa_strong_similarity: float = 0.86
     tesseract_cmd: str | None = None
 
     jwt_secret: str = "dev-only-insecure-secret"

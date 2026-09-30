@@ -90,6 +90,8 @@ class DraftSentence(Base):
     # Lesson/announcement section this sentence belongs to (e.g. "starter", "quiz", "web_post").
     section: Mapped[str | None] = mapped_column(String(50))
     text: Mapped[str] = mapped_column(Text)
+    # False for questions and instructions ("Discuss with a partner..."): nothing to fact-check.
+    is_claim: Mapped[bool] = mapped_column(Boolean, default=True, server_default="true")
     cited_chunk_ids: Mapped[list[int]] = mapped_column(ARRAY(Integer), default=list)
     check_result: Mapped[str | None] = mapped_column(String(20))
     check_reason: Mapped[str | None] = mapped_column(Text)

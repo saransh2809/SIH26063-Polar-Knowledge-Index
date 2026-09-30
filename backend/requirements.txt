@@ -32,3 +32,4 @@ google-genai>=1.0
 
 # Tests
 pytest>=8.2
+python-multipart>=0.0.9

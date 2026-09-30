@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Government/Public Service palette: high-contrast navy with a blue accent.
+   Every text/background pair used below meets WCAG 2.1 AA (4.5:1). */
+:root {
+  --background: #f8fafc;
+  --foreground: #020617;
+  --card: #ffffff;
+  --muted: #e8ecf1;
+  --muted-foreground: #475569;
+  --border: #cbd5e1;
+  --primary: #0f172a;
+  --on-primary: #ffffff;
+  --accent: #0369a1;
+  --on-accent: #ffffff;
+  --ring: #0369a1;
+  --ok: #15803d;
+  --ok-bg: #ecfdf3;
+  --warn: #92400e;
+  --warn-bg: #fffbeb;
+  --bad: #b91c1c;
+  --bad-bg: #fef2f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-ring: var(--ring);
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-bad: var(--bad);
+  --color-bad-bg: var(--bad-bg);
+  --font-sans: var(--font-noto), var(--font-noto-deva), system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.passage {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

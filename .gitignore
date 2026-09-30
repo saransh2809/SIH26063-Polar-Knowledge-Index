@@ -25,3 +25,12 @@ data/llm_cache/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Presentation build tooling and renders
+presentation/.venv/
+presentation/icons/node_modules/
+presentation/render/
+data/eval_latest.json
+
+# Local tool config
+.claude/
