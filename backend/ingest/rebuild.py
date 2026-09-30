@@ -36,7 +36,7 @@ def main() -> None:
         step("8/8 Demo staff accounts", PY, "-m", "app.cli", "demo-users")
     else:
         print("\n=== 8/8 Demo staff accounts: already created (see data/demo_users.local.txt) ===")
-    print("\nDone. Start the API with:  .venv\\Scripts\\uvicorn app.main:app")
+    print("\nDone. Start the API with:  .venv\\Scripts\\uvicorn app.main:app --port 8010")
 
 
 if __name__ == "__main__":
