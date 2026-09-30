@@ -68,14 +68,21 @@ def generate_json(system: str, prompt: str, schema: dict, *, use_cache: bool = T
             result = json.loads(response.text)
             break
         except errors.APIError as exc:
+            if exc.code == 429 and "PerDay" in str(exc):
+                # A daily quota does not come back in seconds: fail fast with a clear reason.
+                log.warning("LLM daily quota exhausted for %s", model)
+                raise LLMUnavailable(
+                    f"Daily request quota for {model} is used up (Gemini free tier). "
+                    "Try again tomorrow, use another model, or enable billing."
+                ) from exc
             # 429 (rate limit) and 5xx (overloaded) are usually temporary: wait and retry.
             if exc.code in (429, 500, 502, 503, 504) and attempt < RETRIES:
                 wait = 2 ** (attempt + 1)
                 log.info("LLM busy (%s); retrying in %ss", exc.code, wait)
                 time.sleep(wait)
                 continue
-            log.warning("LLM call failed: %s", exc)
-            raise LLMUnavailable(str(exc)) from exc
+            log.warning("LLM call failed: %s %s", exc.code, str(exc)[:160])
+            raise LLMUnavailable(str(exc)[:300]) from exc
         except Exception as exc:
             log.warning("LLM call failed: %s", exc)
             raise LLMUnavailable(str(exc)) from exc

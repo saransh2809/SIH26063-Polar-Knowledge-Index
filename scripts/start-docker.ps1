@@ -9,8 +9,13 @@ $ErrorActionPreference = 'Stop'
 $docker = 'C:\Program Files\Docker\Docker\Docker Desktop.exe'
 
 function Test-Engine {
-    docker version --format '{{.Server.Version}}' 2>$null | Out-Null
-    return $LASTEXITCODE -eq 0
+    # Windows PowerShell 5.1 turns a native command's stderr into an error under 'Stop'.
+    $prev = $ErrorActionPreference
+    $ErrorActionPreference = 'SilentlyContinue'
+    docker version --format '{{.Server.Version}}' 2>&1 | Out-Null
+    $ok = $LASTEXITCODE -eq 0
+    $ErrorActionPreference = $prev
+    return $ok
 }
 
 if (-not (Test-Engine)) {
