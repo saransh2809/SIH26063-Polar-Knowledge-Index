@@ -1,7 +1,8 @@
 """Stage 4: link every item to its expedition, stations, topics and year.
 
 Status rule:
-  * confirmed   - NCPOR's own catalogue says so (report title, the DSpace section a paper sits in)
+  * confirmed   - NCPOR's own catalogue or printed page says so (report title, the DSpace section a
+                  paper sits in, the year in a paper's printed header)
   * unconfirmed - our inference (keywords in titles/text, or the language model) until a curator checks
 
 Re-running is safe: existing links (including curator decisions) are never overwritten.
@@ -18,13 +19,14 @@ from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app.core.db import SessionLocal
-from app.models import Chunk, Expedition, Item, ItemLink, Station, Topic
+from app.models import Chunk, Expedition, Item, ItemLink, Page, Station, Topic
 from app.services import llm
 from ingest.reference import STATIONS, TOPICS, expedition_number, keyword_pattern
 
 log = logging.getLogger(__name__)
 
 SEASON_RE = re.compile(r"\b((?:19|20)\d{2})\s*[-–/]\s*(\d{2,4})\b")
+PRINTED_YEAR_RE = re.compile(r"Scientific\s+Report,?\s+((?:19|20)\d{2})\b", re.I)
 MIN_TEXT_MENTIONS = 2
 
 
@@ -122,6 +124,17 @@ def rule_links(db: Session, item: Item, stations: list[Station], topics: list[To
     section = item.raw_metadata.get("collection", "") if item.item_type == "paper" else ""
     text = item_text(db, item)
 
+    # Publication year printed in the paper's running header, e.g.
+    # "Ninth Indian Expedition to Antarctica, Scientific Report, 1994".
+    if item.item_type == "paper":
+        first_page = db.scalar(select(Page.text).where(Page.item_id == item.id, Page.page_no == 1)) or ""
+        m = PRINTED_YEAR_RE.search(first_page[:600])
+        if m:
+            year = int(m.group(1))
+            item.published_year = year
+            add_link(db, item, "year", year, "rule", "confirmed",
+                     f'page 1 header reads "{m.group(0).strip()}" (publication year)', "rule:printed-header")
+
     for st in stations:
         pat = keyword_pattern(st.aliases)
         if pat.search(item.title):
@@ -201,25 +214,34 @@ def run(use_model: bool = True) -> None:
                 rule_links(db, paper, stations, topics, exp, paper_evidence)
             db.commit()
 
-        # Items rules could not classify: no expedition link, or (for papers) no topic link.
+        # DSpace records rules could not classify: no expedition link, or (papers) no topic link.
+        # News posts are left alone: most are not about any expedition, and guessing one would be wrong.
         expeditions = db.scalars(select(Expedition)).all()
         linked = lambda link_type: select(ItemLink.item_id).where(
             ItemLink.link_type == link_type, ItemLink.status != "rejected")
-        no_exp = db.scalars(select(Item).where(Item.id.not_in(linked("expedition")))).all()
-        no_topic = db.scalars(select(Item).where(Item.item_type != "report", Item.id.not_in(linked("topic")))).all()
+        archive = Item.item_type.in_(("report", "paper"))
+        no_exp = db.scalars(select(Item).where(archive, Item.id.not_in(linked("expedition")))).all()
+        no_topic = db.scalars(select(Item).where(Item.item_type == "paper", Item.id.not_in(linked("topic")))).all()
         pending = {i.id: i for i in no_exp + no_topic}
-        model_added, model_skipped = 0, 0
+        model_added, model_skipped, failures_in_row = 0, 0, 0
         for item in pending.values():
-            if not use_model:
+            if not use_model or failures_in_row >= 5:
                 model_skipped += 1
                 continue
             try:
                 model_added += model_links(db, item, topics, expeditions, need_expedition=item in no_exp)
                 db.commit()
-            except (llm.LLMNotConfigured, llm.LLMUnavailable) as exc:
-                model_skipped = len(pending) - model_added
+                failures_in_row = 0
+            except llm.LLMNotConfigured as exc:
                 print(f"Model fallback skipped: {exc}")
-                break
+                use_model = False
+                model_skipped += 1
+            except llm.LLMUnavailable:
+                db.rollback()
+                failures_in_row += 1
+                model_skipped += 1
+        if failures_in_row >= 5:
+            print("Model fallback stopped after 5 failures in a row (API busy or rate-limited). Re-run later.")
 
         summarise(db, model_skipped)
 
@@ -237,13 +259,14 @@ def summarise(db: Session, model_skipped: int) -> None:
     for r in rows:
         by_method[r[1]] += r[3]
     print(f"\nLinks from rules: {by_method['rule']}   from model: {by_method['model']}")
-    total = db.scalar(select(func.count()).select_from(Item))
-    with_exp = db.scalar(select(func.count(func.distinct(ItemLink.item_id))).where(ItemLink.link_type == "expedition"))
-    print(f"Items with an expedition link: {with_exp} / {total}")
-    missing = db.scalars(select(Item.title).where(Item.id.not_in(
-        select(ItemLink.item_id).where(ItemLink.link_type == "expedition")))).all()
+    has_exp = select(ItemLink.item_id).where(ItemLink.link_type == "expedition", ItemLink.status != "rejected")
+    for item_type in ("report", "paper", "news"):
+        total = db.scalar(select(func.count()).select_from(Item).where(Item.item_type == item_type))
+        with_exp = db.scalar(select(func.count()).select_from(Item).where(Item.item_type == item_type, Item.id.in_(has_exp)))
+        print(f"{item_type:>7} items with an expedition link: {with_exp} / {total}")
+    missing = db.scalars(select(Item.title).where(Item.item_type.in_(("report", "paper")), Item.id.not_in(has_exp))).all()
     for title in missing[:10]:
-        print(f"  no expedition: {title[:90]}")
+        print(f"  archive item with no expedition: {title[:90]}")
     if model_skipped:
         print(f"Items still waiting for model classification: {model_skipped}")
 
