@@ -1,0 +1,34 @@
+# Web API
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+
+# Database
+sqlalchemy>=2.0.30
+alembic>=1.13
+psycopg[binary]>=3.2
+pgvector>=0.3
+
+# Auth
+pyjwt>=2.8
+bcrypt>=4.1
+
+# Harvesting
+httpx>=0.27
+beautifulsoup4>=4.12
+lxml>=5.2
+
+# PDF, OCR
+pymupdf>=1.24
+pytesseract>=0.3.10
+pillow>=10.3
+
+# Search
+sentence-transformers>=3.0
+
+# Language model (Google Gemini)
+google-genai>=1.0
+
+# Tests
+pytest>=8.2
