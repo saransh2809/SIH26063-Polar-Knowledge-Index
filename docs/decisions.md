@@ -55,3 +55,14 @@ In the first real run Gemini marked every answer sentence as "not a claim", whic
 skipped the checker. Now a sentence skips the check only if it is a question, a hashtag line, or a
 starter/activity instruction. Passage IDs the model writes into sentence text are removed, but only
 when every number in the bracket is a passage it was given, so "(1988, 1991)" is kept.
+
+## 2026-10-01 — Local model (Ollama) as fallback and for bulk jobs
+The team's Gemini key is on the free tier (20 requests per day per model), which blocks the
+evaluation and makes the live demo fragile. `LLM_PROVIDER` / `LLM_FALLBACK_PROVIDER` /
+`LLM_BULK_PROVIDER` now choose between Gemini and a local Ollama model (default `qwen3:8b`, which
+fits the 8 GB RTX 4060). Structured output uses Ollama's JSON-schema `format`; Gemini's
+`nullable` is converted to a JSON Schema type list. Tested on the glacier question: the local
+model answered and checked in about 2 minutes, but cited all 8 passages for every sentence and
+its checker passed everything, so Gemini stays the main provider for answers, checking and Hindi;
+the local model handles link tagging and candidate test questions, and keeps the demo working
+offline. Both models are now told to cite only the 1–3 passages that directly support a sentence.

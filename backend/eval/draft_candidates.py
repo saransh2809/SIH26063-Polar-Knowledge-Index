@@ -75,7 +75,8 @@ def main() -> None:
         for chunk in candidate_chunks(db, args.answerable, args.seed):
             if made >= args.answerable:
                 break
-            result = llm.generate_json(SYSTEM, f"Passage (page {chunk.page_start} of \"{chunk.item.title}\"):\n{chunk.text}", SCHEMA)
+            result = llm.generate_json(SYSTEM, f"Passage (page {chunk.page_start} of \"{chunk.item.title}\"):\n{chunk.text}", SCHEMA,
+                                     purpose="bulk")
             fact = (result.get("expected_fact") or "").strip()
             if not result.get("usable") or not fact or norm(fact) not in norm(chunk.text):
                 continue  # the phrase must really be in the passage
@@ -88,7 +89,8 @@ def main() -> None:
             next_id += 1
             made += 1
 
-        extra = llm.generate_json(UNANSWERABLE_SYSTEM, f"Write {args.unanswerable} questions.", UNANSWERABLE_SCHEMA)
+        extra = llm.generate_json(UNANSWERABLE_SYSTEM, f"Write {args.unanswerable} questions.", UNANSWERABLE_SCHEMA,
+                                 purpose="bulk")
         for q in extra.get("questions", [])[: args.unanswerable]:
             rows.append({
                 "id": next_id, "question": q.strip(), "answerable": "no", "expected_fact": "",

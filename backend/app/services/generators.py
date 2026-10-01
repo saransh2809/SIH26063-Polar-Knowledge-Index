@@ -22,7 +22,8 @@ GROUNDING_RULES = (
     "the cited passages, even if you believe them to be true. Passages marked OCR may contain recognition "
     "errors: never repeat a number unless it is clearly legible, and never 'fix' a number. "
     "Never write about the health or psychology of identifiable individuals. "
-    "Put passage IDs only in the citations field, never in the sentence text."
+    "Put passage IDs only in the citations field, never in the sentence text. Cite only the 1-3 passages that "
+    "directly state the sentence's content; do not cite every passage you were given."
 )
 
 SENTENCE = {

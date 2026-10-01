@@ -16,8 +16,15 @@ class Settings(BaseSettings):
 
     database_url: str = "postgresql+psycopg://ncpor:change-me@localhost:5433/ncpor"
 
+    # Language model providers (see app/services/llm.py).
+    llm_provider: str = "gemini"
+    llm_fallback_provider: str | None = None
+    llm_bulk_provider: str | None = None
     gemini_api_key: str | None = None
     llm_model: str | None = None
+    ollama_url: str = "http://localhost:11434"
+    ollama_model: str = "qwen3:8b"
+    ollama_timeout_seconds: float = 300.0
 
     embedding_model: str = "intfloat/multilingual-e5-base"
     # Refusal thresholds on cosine similarity (0-1). Calibrated in docs/decisions.md.

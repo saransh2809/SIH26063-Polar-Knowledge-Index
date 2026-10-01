@@ -23,5 +23,13 @@ def health(db: Session = Depends(get_db)) -> dict:
         result["error"] = type(exc).__name__
     if result["database"] != "ok" or not result["pgvector"] or result["pgvector"] == "not installed":
         result["status"] = "degraded"
-    result["llm_configured"] = get_settings().llm_configured
+    settings = get_settings()
+    result["llm_configured"] = settings.llm_configured or settings.llm_provider == "ollama"
+    result["llm"] = {
+        "provider": settings.llm_provider,
+        "fallback": settings.llm_fallback_provider or None,
+        "bulk": settings.llm_bulk_provider or None,
+        "gemini_model": settings.llm_model if settings.llm_configured else None,
+        "ollama_model": settings.ollama_model,
+    }
     return result

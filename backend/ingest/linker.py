@@ -182,7 +182,7 @@ def model_links(db: Session, item: Item, topics: list[Topic], expeditions: list[
         },
         "required": ["topics"],
     }
-    result = llm.generate_json(CLASSIFY_SYSTEM, prompt, schema)
+    result = llm.generate_json(CLASSIFY_SYSTEM, prompt, schema, purpose="bulk")
     added = 0
     by_key = {t.key: t for t in topics}
     for choice in result.get("topics", [])[:2]:
