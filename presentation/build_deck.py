@@ -285,6 +285,27 @@ def ribbon(slide, x, y, w, h, text, fill=NAVY, size=12):
             anchor=MSO_ANCHOR.MIDDLE)
 
 
+REPO_URL = "https://github.com/saransh2809/SIH26063-Polar-Knowledge-Index"
+VIDEO_URL = None  # set once the demo video is uploaded
+
+
+def links_box(slide, x, y, w, size=8.5):
+    """'github repo link :' and 'demo youtube video :' lines, clickable when a URL is set."""
+    tb = textbox(slide, x, y, w, 0.34, "", size=size)
+    tf = tb.text_frame
+    for i, (label, url) in enumerate([("github repo link : ", REPO_URL), ("demo youtube video : ", VIDEO_URL)]):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.space_after = Pt(0)
+        add_rich(p, label, size, DARK, bold=True)
+        if url:
+            r = p.add_run()
+            r.text = url
+            r.font.size, r.font.name, r.font.underline = Pt(size), BODY, True
+            r.font.color.rgb = BLUE
+            r.hyperlink.address = url
+    return tb
+
+
 def notes(slide, text):
     slide.notes_slide.notes_text_frame.text = text
 
@@ -406,7 +427,7 @@ for i, (a, b, col) in enumerate(callouts):
     yy = 5.3 + i * 0.44
     shp = shape(s2, MSO_SHAPE.PENTAGON, 9.35, yy, 3.2, 0.38, col)
     textbox(s2, 9.45, yy, 2.95, 0.38, f"**{a}** {b}", size=9.5, color=WHITE, anchor=MSO_ANCHOR.MIDDLE)
-textbox(s2, 8.75, 6.62, 4.2, 0.3, ["**github repo link :**", "**demo youtube video :**"], size=8.5, after=0)
+links_box(s2, 8.75, 6.6, 4.2, size=8)
 notes(s2, "Problem: NCPOR's material is stored in six disconnected systems and nothing turns it into outreach. "
           "Solution: harvest what NCPOR already publishes, link every item to its expedition, and generate "
           "reviewed, cited content only from linked sources.")
@@ -637,7 +658,7 @@ for i, (label, url) in enumerate(refs):
     r.font.size, r.font.name, r.font.underline = Pt(9), BODY, True
     r.font.color.rgb = BLUE
     r.hyperlink.address = url
-textbox(s6, 0.35, 6.62, 6.3, 0.3, ["**github repo link :**   **demo youtube video :**"], size=8.5)
+links_box(s6, 0.35, 6.6, 6.3)
 
 caps_label(s6, 6.95, 1.28, 6.0, "Comparison with existing approaches", color=NAVY, icon_name="chartline", size=12)
 Y, N = "✔", "✖"
