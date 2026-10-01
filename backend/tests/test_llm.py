@@ -63,3 +63,14 @@ def test_all_providers_down_is_unavailable(settings, monkeypatch):
     monkeypatch.setitem(llm._CALL, "ollama", down)
     with pytest.raises(llm.LLMUnavailable):
         llm.generate_json("s", "p", {"type": "object"})
+
+
+def test_paused_gemini_is_skipped_without_a_network_call(settings, monkeypatch):
+    import time
+
+    monkeypatch.setattr(settings, "gemini_api_key", "test-key")
+    monkeypatch.setattr(settings, "llm_model", "test-model")
+    monkeypatch.setattr(llm, "_gemini_paused_until", time.monotonic() + 60)
+    monkeypatch.setattr(llm, "_gemini_client", object())  # any real call would fail loudly
+    with pytest.raises(llm.LLMUnavailable, match="paused"):
+        llm._gemini("s", "p", {"type": "object"})

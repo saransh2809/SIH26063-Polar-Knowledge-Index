@@ -59,7 +59,7 @@ cd backend; .\.venv\Scripts\python -m pytest -q
 * **Docker Desktop crashes on start** ("initializing Inference manager" or "Secrets Engine ...
   engine.sock"): run `scripts\start-docker.ps1`. It moves stale socket folders aside and restarts.
 * **Gemini "503 high demand" or "429 quota"**: the free tier allows about 20 requests per day per
-  model. Enable billing in Google AI Studio, or rely on the local fallback below.
+  model. The app then pauses Gemini and uses the local model automatically (see below).
 
 ## Language models
 
@@ -70,6 +70,10 @@ Set in `.env`:
 | `LLM_PROVIDER` | `gemini` | answers, lessons, announcements, fact-checker, Hindi |
 | `LLM_FALLBACK_PROVIDER` | `ollama` | tried automatically when Gemini fails (quota, outage, offline) |
 | `LLM_BULK_PROVIDER` | `ollama` | link tagging and drafting test questions, so they cost no Gemini quota |
+
+**Free setup (no billing):** `LLM_MODEL=gemini-2.5-flash` with the settings above. Gemini's free
+daily quota is used first; when it runs out, or Gemini is overloaded, the app pauses Gemini for a
+while and answers with the local model. Everything already answered is cached and reused.
 
 The local model needs [Ollama](https://ollama.com) running with `OLLAMA_MODEL` pulled
 (`ollama pull qwen3:8b`, ~5 GB, fits an 8 GB GPU). It works offline but is weaker than Gemini:

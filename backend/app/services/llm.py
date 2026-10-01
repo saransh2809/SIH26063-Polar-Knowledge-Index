@@ -48,6 +48,17 @@ def _model_id(provider: str) -> str:
 
 # --- Gemini ----------------------------------------------------------------------------------
 _gemini_client = None
+# Free-tier friendly: once Gemini's daily quota is used up (or it stays overloaded), skip it for a
+# while and go straight to the fallback instead of failing on every call first.
+_gemini_paused_until = 0.0
+PAUSE_AFTER_DAILY_QUOTA = 3600  # seconds
+PAUSE_AFTER_OVERLOAD = 300
+
+
+def _pause_gemini(seconds: float, reason: str) -> None:
+    global _gemini_paused_until
+    _gemini_paused_until = time.monotonic() + seconds
+    log.warning("Gemini paused for %d min: %s", seconds // 60, reason)
 
 
 def _gemini(system: str, prompt: str, schema: dict) -> Any:
@@ -55,6 +66,8 @@ def _gemini(system: str, prompt: str, schema: dict) -> Any:
     settings = get_settings()
     if not settings.llm_configured:
         raise LLMNotConfigured("Set GEMINI_API_KEY and LLM_MODEL in .env to use Gemini.")
+    if time.monotonic() < _gemini_paused_until:
+        raise LLMUnavailable("Gemini paused after quota/overload errors; using the fallback.")
     from google import genai
     from google.genai import errors, types
 
@@ -75,7 +88,7 @@ def _gemini(system: str, prompt: str, schema: dict) -> Any:
         except errors.APIError as exc:
             if exc.code == 429 and "PerDay" in str(exc):
                 # A daily quota does not come back in seconds: fail fast with a clear reason.
-                log.warning("LLM daily quota exhausted for %s", model)
+                _pause_gemini(PAUSE_AFTER_DAILY_QUOTA, f"daily quota for {model} used up")
                 raise LLMUnavailable(
                     f"Daily request quota for {model} is used up (Gemini free tier). "
                     "Try again tomorrow, use another model, or enable billing."
@@ -86,6 +99,8 @@ def _gemini(system: str, prompt: str, schema: dict) -> Any:
                 log.info("LLM busy (%s); retrying in %ss", exc.code, wait)
                 time.sleep(wait)
                 continue
+            if exc.code in (429, 500, 502, 503, 504):
+                _pause_gemini(PAUSE_AFTER_OVERLOAD, f"still {exc.code} after {RETRIES} retries")
             log.warning("LLM call failed: %s %s", exc.code, str(exc)[:160])
             raise LLMUnavailable(str(exc)[:300]) from exc
         except Exception as exc:
