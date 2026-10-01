@@ -27,7 +27,8 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. The API runs on port **8010** (8000 is often taken by other projects);
+Open http://localhost:3000. For a demo, use the production build instead of `npm run dev`:
+`npm run build` then `npm start` (faster, no developer overlay). The API runs on port **8010** (8000 is often taken by other projects);
 check it at http://localhost:8010/health.
 
 The first `ingest.rebuild` downloads ~265 PDFs from DSpace at one request per second and the
