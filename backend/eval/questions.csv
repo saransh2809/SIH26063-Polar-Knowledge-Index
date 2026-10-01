@@ -1,1 +1,76 @@
 id,question,answerable,expected_fact,expected_item_id,expected_page,status,verified_by,notes
+1,What minerals are present in the pyroxene-amphibolite enclaves?,yes,Horablende-biotite-plagioclase+perthite-clinopyroxene+orthopyroxen quartz-sphene-ilmenite,217,3,unverified,,drafted by model from chunk 1339; check the page image
+2,What was the magnetic index during the auroral event on 29 April 1994?,yes,kp magnetic index for this interval was 3,264,10,unverified,,drafted by model from chunk 1569; check the page image
+3,What are the ages of the samples collected for the present study?,yes,Ages of the samples collected for the present study.,88,7,unverified,,drafted by model from chunk 2574; check the page image
+4,Who led the First Indian Expedition to Antarctica?,yes,Dr. S. Z. Qasim,23,5,unverified,,drafted by model from chunk 2271; check the page image
+5,When did the ship sail off from Mauritius?,yes,1500 hours on 22nd,366,8,unverified,,drafted by model from chunk 3630; check the page image
+6,What parameters were measured regularly during the expedition?,yes,"Blood pressure, Pulse rate and duration of sleep",661,6,unverified,,drafted by model from chunk 5475; check the page image
+7,Which station communicates on the 10th of every month?,yes,"Japanese station ""SYOWA"" (69°00'S, 39°15'E)",173,2,unverified,,drafted by model from chunk 3206; check the page image
+8,What was the noise level during drilling operation at 1-meter distance?,yes,93 dB (A) ata 1-meter distance,763,5,unverified,,drafted by model from chunk 6178; check the page image
+9,What was the distance from Maitri to the camp at Gjeruldsenhogda?,yes,The distance form Maitri to the camp at Gjeruldsenhogda was 170 km,471,5,unverified,,drafted by model from chunk 4494; check the page image
+10,In which months were the earthquakes recorded?,yes,August and September 2003,539,8,unverified,,drafted by model from chunk 4678; check the page image
+11,Which lichen species is commonly found on moraine in the dry regions of Schirmacher Oasis?,yes,"A yellow, squamulose areolate lichen",222,2,unverified,,drafted by model from chunk 1109; check the page image
+12,What is the approximate size of Schirmacher Oasis?,yes,approximately 35 sq kms,273,2,unverified,,drafted by model from chunk 1601; check the page image
+13,What was the wind speed experienced by DG during the extratropical cyclone on 31.1.86?,yes,wind speed was touching 40 kts,94,23,unverified,,drafted by model from chunk 3116; check the page image
+14,What method was used to determine organic carbon content in the sediment samples?,yes,wet oxidation method (El-Wakeel and Riley 1957),31,1,unverified,,drafted by model from chunk 2361; check the page image
+15,What type of magnetic susceptibilities are mentioned in the passage?,yes,paramagnetic to mixed-type (paramagnetic + ferromagnetic) values,650,7,unverified,,drafted by model from chunk 5215; check the page image
+16,How many convoys were run by the 7th wintering team during the austral winter of 1990?,yes,9 convoys,174,1,unverified,,drafted by model from chunk 3259; check the page image
+17,What weather forecast did the expedition receive?,yes,weather forecast received from NCMRWF (National Centre for Medium Range Weather Forecast) through Maitri Radio Officer,748,11,unverified,,drafted by model from chunk 6273; check the page image
+18,What was the purpose of the wind monitoring station during the 19th Antarctic Expedition?,yes,to collect wind data regularly,469,5,unverified,,drafted by model from chunk 4365; check the page image
+19,How was the Brewer Spectrophotometer protected during adverse weather?,yes,covered immediately with heavy iron lids,533,3,unverified,,drafted by model from chunk 5534; check the page image
+20,What is the height of the station MAITRIS above MSL?,yes,117.00,216,7,unverified,,drafted by model from chunk 1045; check the page image
+21,What is the expected magnetic signature in the daytime on quiet days at Maitri?,yes,predominantly negative (upward) signature,265,7,unverified,,drafted by model from chunk 1406; check the page image
+22,How many days were actually available for outdoor work during the expedition?,yes,about 45—rather a limited duration,86,16,unverified,,drafted by model from chunk 3006; check the page image
+23,Which stations are located in the antarctic convergence region?,yes,G10 and G12 are in the antarctic convergence region,12,1,unverified,,drafted by model from chunk 2284; check the page image
+24,Which organization operationalized the Laser Heterodyne System on a year-round basis?,yes,This is a study by NPL,366,2,unverified,,drafted by model from chunk 3617; check the page image
+25,Where is the Larsemann Hills located?,yes,"south eastern coast of Prydz Bay, Princess Elizabeth Land, East Antarctica",659,2,unverified,,drafted by model from chunk 5452; check the page image
+26,What is the average grain size of the domains with the finest grains?,yes,an average of 0.02 mm,161,9,unverified,,drafted by model from chunk 2946; check the page image
+27,What was the pH value of the sample?,yes,pH value of the sample was found to be 6.7,765,11,unverified,,drafted by model from chunk 6241; check the page image
+28,What is the resolution of the 12-bit ADC used in the experiment?,yes,2.44 mV,460,3,unverified,,drafted by model from chunk 4120; check the page image
+29,Where were the new stakes installed to monitor ice dynamics?,yes,about 2 km away from the present area,530,11,unverified,,drafted by model from chunk 4465; check the page image
+30,When does the ozone depletion period occur at Dakshin Gangotri?,yes,September and first half of October,267,5,unverified,,drafted by model from chunk 1504; check the page image
+31,What are the biomass values for sediment covered with moss turf and moss carpets?,yes,5.525 g/m2 and 0.960 g/m2,95,7,unverified,,drafted by model from chunk 2702; check the page image
+32,What was used to collect ice samples from deeper layers?,yes,"a 5 metre long, hand operated stainless steel corer",9,2,unverified,,drafted by model from chunk 2072; check the page image
+33,What is the purpose of the seismic study mentioned in the passage?,yes,help to delineate the deep seismic structure,366,4,unverified,,drafted by model from chunk 3622; check the page image
+34,What is the method used for measuring low frequency electrical conduction of ice cores?,yes,a non-destructive and fast direct current (DC) method,654,13,unverified,,drafted by model from chunk 5326; check the page image
+35,What is the average concentration of phosphate in the coastal ice-edge zone?,yes,phosphate (3.75 μ mol dm-3 ),158,4,unverified,,drafted by model from chunk 3230; check the page image
+36,Which drug was prescribed for the subjects with GD at 4 months?,yes,atorvastatin (20 mg once daily at bedtime),760,2,unverified,,drafted by model from chunk 6038; check the page image
+37,What was the average net radiation in February?,yes,32.66Wm-2,456,15,unverified,,drafted by model from chunk 4084; check the page image
+38,What process may explain the slight enrichment of Na2O in the granites?,yes,alkali metasomatism during their formation,542,10,unverified,,drafted by model from chunk 5081; check the page image
+39,What method was used to analyse major oxides?,yes,analysed for major oxides by XRF using PW 1410 (Philips) in the AMSE Laboratory,217,11,unverified,,drafted by model from chunk 1350; check the page image
+40,What were the average temperature and wind speed at Maitri station in January 1994?,yes,"0°C, 13.4 knot",276,11,unverified,,drafted by model from chunk 1665; check the page image
+41,What is the significance of the meteorological data collected at Dakshin Gangotri?,yes,It is likely to throw light on the interaction of Antarctic weather with the weather features of lower latitudes,94,29,unverified,,drafted by model from chunk 3127; check the page image
+42,What are the thorium and uranium values of ANT-82?,yes,27.3 ppm and 0.91 ppm,22,3,unverified,,drafted by model from chunk 2350; check the page image
+43,What types of fire extinguishers were found to be non-functional?,yes,"A large chunk of trolly mounted lire extinguishers (50 lit. mechanical foam and 50 kg. DCP type) and other hand held extinguishers (9 lit mechanical foam, 3.3 kg/9.2 kg. CO2 and 2.5 kg/25 kg halon type) were lying outside the genset accomodation",392,8,unverified,,drafted by model from chunk 3907; check the page image
+44,What is the name of the region where the magnetic fabric studies were conducted?,yes,"Larsemann Hills, East Antarctica",650,2,unverified,,drafted by model from chunk 5205; check the page image
+45,During which months was the ozone-hole investigated at Antarctica?,yes,September and October,153,22,unverified,,drafted by model from chunk 3779; check the page image
+46,Where is the 83 degree South Camp located in terms of latitude and longitude?,yes,83’20.329 S Lat and 20°17.429 E long,748,14,unverified,,drafted by model from chunk 6280; check the page image
+47,Which publication discusses the lichen flora of Schirmacher Oasis and Vettiyya Nunatak?,yes,Lichen flora of Schirmacher Oasis and Vettiyya Nunatak.,547,16,unverified,,drafted by model from chunk 5244; check the page image
+48,What causes the formation of stable ground based inversions at Maitri?,yes,cold air mass close to surface forming stable ground based inversions,212,6,unverified,,drafted by model from chunk 949; check the page image
+49,What is the name of Zub lake as referred to by Indians?,yes,Priyadarshini lake,276,7,unverified,,drafted by model from chunk 1659; check the page image
+50,What was the mean temperature of the upper layer of sediments in Priyadarshini Lake?,yes,4.7°C and 2.2°C respectively,96,2,unverified,,drafted by model from chunk 2550; check the page image
+51,Which bird was sighted in the region of Antarctic convergence?,yes,Antarctic Tern (Sterna vittata),32,4,unverified,,drafted by model from chunk 2621; check the page image
+52,What happens when the compressive arch of strain breaks?,yes,nothing can stop it breaking tip with astonishing speed.,379,4,unverified,,drafted by model from chunk 3611; check the page image
+53,What fronts are identified in the passage?,yes,SF: Scotia Front; PF1 and PF2: North and South Polar Front,641,10,unverified,,drafted by model from chunk 5017; check the page image
+54,What is the title of the report that discusses the geology of the Schirmacher-Range?,yes,Geology of Schirmacher-Range (Dakshin Gangotri) East Antarctica,161,15,unverified,,drafted by model from chunk 2957; check the page image
+55,What factors influence the downwelling longwave radiation component?,yes,temperature and composition of the atmosphere,757,5,unverified,,drafted by model from chunk 6195; check the page image
+56,What was the previous belief about human acclimatization to cold?,yes,"man is a tropical animal and he can get acclimatized to heat only, but not to cold",467,13,unverified,,drafted by model from chunk 4267; check the page image
+57,What is the purpose of the methanizer in the FID detector?,yes,"As FID is less sensitive to C02, methanizer is included which converts C02 into methane.",537,3,unverified,,drafted by model from chunk 4642; check the page image
+58,What causes an increase in ionisation of the D region?,yes,increased electron precipitation in the auroral ionosphere,214,9,unverified,,drafted by model from chunk 1013; check the page image
+59,What minerals are present in the calc-gneisses and associated migmatites?,yes,"Disseminated grains of pyrite, chalcopyrite, galena and some associated sulphide minerals",90,10,unverified,,drafted by model from chunk 2448; check the page image
+60,What is the total bacterial count in the ice?,yes,63 g-1 of ice,9,3,unverified,,drafted by model from chunk 2075; check the page image
+61,What is the current status of methane hydrate research on Mars?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+62,How has the European Space Agency's ice-penetrating radar technology influenced Antarctic exploration strategies?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+63,What are the latest developments in ice core drilling techniques used by NASA's Greenland Ice Sheet Project?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+64,What is the projected cost of establishing a permanent research station on the Moon by 2030?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+65,Can you provide details on the fictional Antarctic expedition depicted in the 2019 novel *The Frozen Horizon*?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+66,What are the key findings from the 2025 Arctic expedition conducted by the United States Geological Survey?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+67,What is the role of artificial intelligence in predicting ice shelf collapse on Europa?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+68,How does the Indian Antarctic Programme compare to the Russian Arctic research initiatives in terms of satellite data collection?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+69,What are the potential health risks for astronauts conducting long-term research on the surface of Titan?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+70,What is the significance of the 2022 fictional documentary *Antarctica: A New Frontier* in shaping public perception of polar science?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+71,What are the current market prices for specialized equipment used in Antarctic research as of 2024?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+72,"What are the planned activities for the 2026 International Polar Year, including any proposed interplanetary collaborations?",no,,,,unverified,,drafted by model; confirm the archive really has no answer
+73,What is the role of indigenous communities in the fictionalized accounts of the 1990s Antarctic expeditions in the *Polar Chronicles* series?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+74,What are the expected outcomes of the 2030 Antarctic Treaty Summit regarding resource extraction on the Moon?,no,,,,unverified,,drafted by model; confirm the archive really has no answer
+75,What are the key plot points in the 2015 science fiction film *Icebound: A Martian Expedition*?,no,,,,unverified,,drafted by model; confirm the archive really has no answer

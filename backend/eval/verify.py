@@ -2,7 +2,11 @@
 
 For an answerable row, the page (scan beside its text) opens in your browser. Find the expected
 fact on the SCAN, not only in the extracted text, then answer:
-  y = verified   n = wrong (row is marked rejected)   e = edit the fact   s = skip   q = quit
+  y = verified   n = wrong (row is marked rejected)   e = edit the fact   r = reword the question
+  s = skip   q = quit
+
+Reject a row (n) if the fact is OCR garbage, the question just repeats the answer, or it asks about
+an identifiable person's health. Reword (r) if the question needs context, e.g. which expedition.
 
 The website must be running (http://localhost:3000). Progress is saved after every answer, so you
 can stop and continue later; several people can split the work with --from / --to.
@@ -55,9 +59,13 @@ def main() -> None:
                 print("Is the fact on that page, and does it answer the question?")
             else:
                 print("Expected: the system should REFUSE. Is this really something the NCPOR archive does not answer?")
-            choice = input("[y]es / [n]o / [e]dit fact / [s]kip / [q]uit: ").strip().lower()
+            choice = input("[y]es / [n]o / [e]dit fact / [r]eword question / [s]kip / [q]uit: ").strip().lower()
             if choice == "q":
                 break
+            if choice == "r":
+                # e.g. add the missing context: "...sail from Mauritius on the 1st Expedition?"
+                r["question"] = input("Reworded question: ").strip() or r["question"]
+                choice = input("Now: [y]es / [n]o / [e]dit fact / [s]kip: ").strip().lower()
             if choice == "e" and r["answerable"] == "yes":
                 r["expected_fact"] = input("Exact phrase as printed on the page: ").strip()
                 choice = "y"
