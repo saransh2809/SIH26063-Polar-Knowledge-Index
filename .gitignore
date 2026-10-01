@@ -35,3 +35,4 @@ data/eval_latest.json
 # Local tool config
 .claude/
 data/logs/
+docs/explainer/render/

@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<title>Polar Knowledge Index — Aasaan Bhasha Mein (Hinglish Explainer)</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 16mm 14mm; }
+  :root {
+    --navy: #1E2761; --blue: #1F6FD1; --orange: #D95926; --green: #148A5B; --red: #C0392B;
+    --teal: #128C7E; --purple: #5B3FA8; --ink: #1F2937; --muted: #5B6475; --line: #CBD5E1;
+    --t-blue: #EAF2FC; --t-orange: #FDF0E9; --t-green: #E8F6EF; --t-grey: #F3F4F7; --t-red: #FDECEA;
+    --t-purple: #EFEAFB; --t-yellow: #FFF7DB;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: "Segoe UI", "Nirmala UI", Arial, sans-serif; color: var(--ink);
+         font-size: 10.6pt; line-height: 1.5; background: #fff; }
+  h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0 0 6px; }
+  h2 { font-size: 19pt; margin-top: 0; }
+  h3 { font-size: 12.5pt; margin-top: 12px; }
+  p { margin: 4px 0 8px; }
+  ul { margin: 4px 0 8px 18px; padding: 0; }
+  li { margin: 2px 0; }
+  b { color: var(--navy); }
+  .page { page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .chapter { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .chapter .num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff;
+                  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt; }
+  .chapter .kicker { font-size: 8.5pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .lead { font-size: 11.5pt; color: var(--ink); }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 8px 0; break-inside: avoid; }
+  .tip { background: var(--t-yellow); border-color: #F0D58A; }
+  .tip::before { content: "💡 Simple samjho: "; font-weight: 700; color: #8A6100; }
+  .note { background: var(--t-blue); border-color: #BCD4F2; }
+  .warn { background: var(--t-orange); border-color: #F2C9B3; }
+  .good { background: var(--t-green); border-color: #B7E0CB; }
+  .bad  { background: var(--t-red); border-color: #F1C1BB; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .stat { background: var(--t-grey); border-radius: 10px; padding: 10px 8px; text-align: center; break-inside: avoid; }
+  .stat .n { font-size: 20pt; font-weight: 800; line-height: 1.1; }
+  .stat .l { font-size: 8.5pt; color: var(--muted); }
+  figure { margin: 8px 0; break-inside: avoid; }
+  figure img { width: 100%; border: 1px solid var(--line); border-radius: 6px; display: block; }
+  .fig-sm { width: 64%; margin-left: auto; margin-right: auto; }
+  .fig-scan img { max-height: 92mm; width: auto; margin: 0 auto; }
+  figcaption { font-size: 8.5pt; color: var(--muted); font-style: italic; margin-top: 3px; text-align: center; }
+  table { border-collapse: collapse; width: 100%; font-size: 9.4pt; margin: 6px 0; break-inside: avoid; }
+  th { background: var(--navy); color: #fff; text-align: left; padding: 5px 7px; }
+  td { border-bottom: 1px solid var(--line); padding: 4px 7px; vertical-align: top; }
+  tr:nth-child(even) td { background: #FAFBFC; }
+  .pill { display: inline-block; border-radius: 99px; padding: 0 8px; font-size: 8.5pt; font-weight: 700; }
+  .p-green { background: var(--t-green); color: var(--green); border: 1px solid #9FD3B9; }
+  .p-amber { background: var(--t-orange); color: #92400E; border: 1px solid #F0C5A8; }
+  .p-red { background: var(--t-red); color: var(--red); border: 1px solid #EDB3AC; }
+  .p-grey { background: var(--t-grey); color: var(--muted); border: 1px solid var(--line); }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font-family: "Segoe UI", Arial, sans-serif; }
+  .small { font-size: 8.8pt; color: var(--muted); }
+  .center { text-align: center; }
+  .qa dt { font-weight: 700; color: var(--navy); margin-top: 8px; }
+  .qa dd { margin: 2px 0 0 0; }
+  .bar-row { display: grid; grid-template-columns: 34px 1fr 52px; align-items: center; gap: 6px; margin: 3px 0; font-size: 8.8pt; }
+  .bar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; background: var(--t-grey); }
+  .bar .t { background: var(--blue); } .bar .o { background: var(--orange); }
+  .legend span { display: inline-flex; align-items: center; gap: 4px; margin-right: 12px; font-size: 8.8pt; }
+  .legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  /* cover */
+  .cover { height: 265mm; display: flex; flex-direction: column; justify-content: space-between;
+           background: linear-gradient(160deg, #0F1A45 0%, #1E2761 55%, #1F6FD1 100%); color: #fff;
+           border-radius: 14px; padding: 26mm 18mm 16mm; }
+  .cover h1 { color: #fff; font-size: 34pt; margin-bottom: 8px; }
+  .cover .sub { font-size: 14pt; opacity: .92; }
+  .cover .tag { font-size: 16pt; font-weight: 700; color: #9CC7FF; margin-top: 14px; }
+  .cover .meta { font-size: 10pt; opacity: .9; line-height: 1.7; }
+  .cover .chips span { display: inline-block; border: 1px solid rgba(255,255,255,.4); border-radius: 99px;
+                       padding: 3px 10px; margin: 0 6px 6px 0; font-size: 9.5pt; }
+  .toc { columns: 2; column-gap: 20px; font-size: 10pt; }
+  .toc div { break-inside: avoid; padding: 3px 0; border-bottom: 1px dotted var(--line); }
+  .donut { width: 150px; height: 150px; border-radius: 50%;
+           background: conic-gradient(var(--green) 0 55.8%, var(--orange) 55.8% 59.6%, var(--red) 59.6% 100%);
+           position: relative; margin: 6px auto; }
+  .donut::after { content: "52"; position: absolute; inset: 30px; background: #fff; border-radius: 50%;
+                  display: flex; align-items: center; justify-content: center; font-size: 22pt; font-weight: 800; color: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- ============================== COVER ============================== -->
+<section class="page">
+  <div class="cover">
+    <div>
+      <div class="meta">SMART INDIA HACKATHON 2026 · Problem Statement 26063 · Team Anarch</div>
+      <h1 style="margin-top:18mm">Polar Knowledge Index</h1>
+      <div class="sub">NCPOR ke 40 saal ke polar expedition archive ko searchable, linked aur<br>trustworthy banane wala system — <b style="color:#fff">aasaan Hinglish mein samjhaaya gaya</b></div>
+      <div class="tag">“Every expedition. Every page. Every claim cited.”</div>
+    </div>
+    <div>
+      <div class="chips">
+        <span>📚 Archive</span><span>🔎 Search</span><span>🤖 AI with proof</span><span>✅ Human approval</span><span>🇮🇳 English + हिन्दी</span>
+      </div>
+      <p class="meta" style="margin-top:10px">Ye document un logon ke liye hai jinhe technical background nahi chahiye.<br>
+      Basics se shuru karke moderate level tak — har cheez diagram, flowchart, screenshot aur real data ke saath.</p>
+      <p class="meta">GitHub: github.com/saransh2809/SIH26063-Polar-Knowledge-Index</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTENTS + ONE LINE ============================== -->
+<section class="page">
+  <h2>Is document mein kya hai?</h2>
+  <div class="toc">
+    <div>1. Ek line mein — humne kya banaya</div>
+    <div>2. NCPOR kaun hai aur kya karta hai</div>
+    <div>3. Problem — data bikhra hua hai</div>
+    <div>4. Hamara idea — ek “smart librarian”</div>
+    <div>5. Poora system ek nazar mein (big picture)</div>
+    <div>6. Step 1 — Reports ikattha karna (Harvesting)</div>
+    <div>7. Step 2 — Purane scans padhna (Text + OCR)</div>
+    <div>8. Step 3 — Sab cheezon ko jodna (Linking)</div>
+    <div>9. Step 4 — Search: shabd aur matlab dono</div>
+    <div>10. Step 5 — AI se jawaab likhwana (RAG)</div>
+    <div>11. Step 6 — Fact-checker: har line ki jaanch</div>
+    <div>12. Step 7 — Insaan ki approval + audit log</div>
+    <div>13. Website ka tour</div>
+    <div>14. Coverage view — kya missing hai</div>
+    <div>15. AI models — Gemini vs Local (free setup)</div>
+    <div>16. Accuracy kaise naapte hain</div>
+    <div>17. Technology — kaunsa tool kya karta hai</div>
+    <div>18. Abhi kya bacha hai</div>
+    <div>19. Judges ke possible sawaal + jawaab</div>
+    <div>20. Shabdkosh (Glossary)</div>
+  </div>
+
+  <div class="chapter" style="margin-top:16px"><div class="num">1</div><div><div class="kicker">Basics</div><h2>Ek line mein — humne kya banaya</h2></div></div>
+  <p class="lead">Humne ek aisa system banaya hai jo <b>NCPOR ke already publish kiye hue purane expedition reports</b> ko khud
+  ikattha karta hai, unhe padhta hai, har report ko uske <b>expedition, station, topic aur saal</b> se jodta hai — aur phir
+  students, teachers aur outreach team ke sawaalon ka <b>jawaab sirf unhi reports se, page number ke saboot ke saath</b> deta hai.</p>
+
+  <div class="box tip">Socho ek bahut bada library hai jisme 40 saal ki kitaabein hain, par na koi index hai, na koi librarian.
+  Humne ek <b>smart librarian</b> banaya hai jo har kitaab padh chuka hai, har page yaad rakhta hai, aur jab aap kuch poochte ho to
+  bolta hai: “ye raha jawaab — <b>Report 9, page 248</b> pe likha hai, khud dekh lo.” Aur agar library mein jawaab nahi hai, to
+  <b>saaf bol deta hai “nahi pata”</b> — kuch bana ke nahi bolta.</div>
+
+  <h3>Real numbers — jo system abhi chal raha hai</h3>
+  <div class="grid4">
+    <div class="stat"><div class="n" style="color:var(--navy)">32</div><div class="l">expedition reports<br>(DSpace se)</div></div>
+    <div class="stat"><div class="n" style="color:var(--blue)">765</div><div class="l">scientific papers<br>(har ek ka PDF)</div></div>
+    <div class="stat"><div class="n" style="color:var(--teal)">837</div><div class="l">NCPOR news posts<br>(2012 se aaj tak)</div></div>
+    <div class="stat"><div class="n" style="color:var(--orange)">3,266</div><div class="l">scanned pages<br>padhe gaye</div></div>
+    <div class="stat"><div class="n" style="color:var(--purple)">6,377</div><div class="l">searchable passages<br>(text ke tukde)</div></div>
+    <div class="stat"><div class="n" style="color:var(--green)">52</div><div class="l">expeditions<br>coverage view mein</div></div>
+    <div class="stat"><div class="n" style="color:var(--red)">0</div><div class="l">naye records jo NCPOR staff<br>ko type karne pade</div></div>
+    <div class="stat"><div class="n" style="color:var(--navy)">31</div><div class="l">automated tests<br>pass ho rahe hain</div></div>
+  </div>
+</section>
+
+<!-- ============================== NCPOR ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">2</div><div><div class="kicker">Basics</div><h2>NCPOR kaun hai aur kya karta hai?</h2></div></div>
+  <p><b>NCPOR</b> = <i>National Centre for Polar and Ocean Research</i>, Goa. Ye Ministry of Earth Sciences (MoES) ke under
+  ek research institute hai. Ye India ke <b>Antarctica, Arctic, Southern Ocean aur Himalaya</b> wale scientific expeditions chalata hai.</p>
+
+  <svg viewBox="0 0 760 250" role="img" aria-label="NCPOR ke expeditions aur stations">
+    <rect x="290" y="95" width="180" height="60" rx="12" fill="#1E2761"/>
+    <text x="380" y="122" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">NCPOR, Goa</text>
+    <text x="380" y="142" text-anchor="middle" fill="#CADCFC" font-size="11">Ministry of Earth Sciences</text>
+    <g font-size="12">
+      <rect x="20" y="15" width="220" height="62" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+      <text x="130" y="38" text-anchor="middle" font-weight="700" fill="#1F6FD1">🧊 Antarctica</text>
+      <text x="130" y="58" text-anchor="middle" fill="#1F2937">Dakshin Gangotri · Maitri · Bharati</text>
+      <rect x="520" y="15" width="220" height="62" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="630" y="38" text-anchor="middle" font-weight="700" fill="#148A5B">❄️ Arctic</text>
+      <text x="630" y="58" text-anchor="middle" fill="#1F2937">Himadri (Svalbard)</text>
+      <rect x="20" y="172" width="220" height="62" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+      <text x="130" y="195" text-anchor="middle" font-weight="700" fill="#D95926">🌊 Southern Ocean</text>
+      <text x="130" y="215" text-anchor="middle" fill="#1F2937">Ship se research cruises</text>
+      <rect x="520" y="172" width="220" height="62" rx="10" fill="#EFEAFB" stroke="#5B3FA8"/>
+      <text x="630" y="195" text-anchor="middle" font-weight="700" fill="#5B3FA8">🏔️ Himalaya</text>
+      <text x="630" y="215" text-anchor="middle" fill="#1F2937">Himansh station</text>
+    </g>
+    <g stroke="#9DBCE8" stroke-width="2.5">
+      <line x1="290" y1="110" x2="240" y2="60"/><line x1="470" y1="110" x2="520" y2="60"/>
+      <line x1="290" y1="140" x2="240" y2="190"/><line x1="470" y1="140" x2="520" y2="190"/>
+    </g>
+  </svg>
+
+  <h3>Har expedition ke baad kya banta hai?</h3>
+  <p>Har saal scientists wahan jaate hain — glacier naapte hain, mausam record karte hain, chattano (rocks), samudra, jeev-jantu,
+  aur insaan ke shareer par thand ka asar study karte hain. Wapas aakar ek <b>“Scientific Report”</b> chhapti hai jisme 20–40
+  research papers hote hain. Purani reports (1980s–2000s) ki <b>scanned PDFs</b> NCPOR ki ek website <b>DSpace</b> par padi hain.</p>
+
+  <div class="grid3">
+    <div class="box note"><b>Expedition</b><br>Ek research yatra. Jaise “9th Indian Expedition to Antarctica”. Hum ise code dete hain: <b>ISEA-9</b>.</div>
+    <div class="box note"><b>Station</b><br>Antarctica/Arctic mein India ka research ghar. Jaise <b>Maitri</b>, <b>Bharati</b>, <b>Himadri</b>.</div>
+    <div class="box note"><b>Report → Paper → Page</b><br>Ek report mein kayi papers; har paper ke kayi pages. Hum har page tak track karte hain.</div>
+  </div>
+
+  <div class="box tip">NCPOR ke paas khazana hai — 40 saal ka Indian polar science. Problem ye nahi ki data nahi hai.
+  Problem ye hai ki ye khazana <b>bandh almari</b> mein hai: scanned PDFs jinhe na search kar sakte ho, na aapas mein jod sakte ho.</div>
+</section>
+
+<!-- ============================== PROBLEM ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">3</div><div><div class="kicker">Problem</div><h2>Problem — data 6 jagah bikhra hua hai</h2></div></div>
+  <p>NCPOR ka material kam se kam <b>6 alag-alag systems</b> mein hai, aur inke beech koi connection nahi hai:</p>
+
+  <svg viewBox="0 0 760 270" role="img" aria-label="Chhe alag systems jo aapas mein jude nahi hain">
+    <g font-size="12">
+      <rect x="10" y="10" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="125" y="38" text-anchor="middle" font-weight="700" fill="#1E2761">Main website</text>
+      <text x="125" y="58" text-anchor="middle" fill="#5B6475">news, station pages</text>
+      <rect x="265" y="10" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="380" y="38" text-anchor="middle" font-weight="700" fill="#1E2761">DSpace</text>
+      <text x="380" y="58" text-anchor="middle" fill="#5B6475">scanned expedition reports</text>
+      <rect x="520" y="10" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="635" y="38" text-anchor="middle" font-weight="700" fill="#1E2761">NPDC</text>
+      <text x="635" y="58" text-anchor="middle" fill="#5B6475">datasets (researchers ke liye)</text>
+      <rect x="10" y="100" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="125" y="128" text-anchor="middle" font-weight="700" fill="#1E2761">MET-Data</text>
+      <text x="125" y="148" text-anchor="middle" fill="#5B6475">weather station data</text>
+      <rect x="265" y="100" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="380" y="128" text-anchor="middle" font-weight="700" fill="#1E2761">Library</text>
+      <text x="380" y="148" text-anchor="middle" fill="#5B6475">books, publications</text>
+      <rect x="520" y="100" width="230" height="70" rx="10" fill="#F3F4F7" stroke="#CBD5E1"/>
+      <text x="635" y="128" text-anchor="middle" font-weight="700" fill="#1E2761">YouTube / social</text>
+      <text x="635" y="148" text-anchor="middle" fill="#5B6475">videos, posts</text>
+    </g>
+    <g fill="#C0392B" font-size="22" font-weight="700" text-anchor="middle">
+      <text x="252" y="52">✗</text><text x="507" y="52">✗</text><text x="252" y="142">✗</text><text x="507" y="142">✗</text>
+      <text x="125" y="92">✗</text><text x="380" y="92">✗</text><text x="635" y="92">✗</text>
+    </g>
+    <rect x="150" y="195" width="460" height="62" rx="12" fill="#FDECEA" stroke="#C0392B"/>
+    <text x="380" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#C0392B">Koi link nahi: dataset ko report ka pata nahi,</text>
+    <text x="380" y="242" text-anchor="middle" font-size="13" font-weight="700" fill="#C0392B">report ko photos ka pata nahi, news ko dono ka pata nahi</text>
+  </svg>
+
+  <h3>Ek student ki pareshani — real example</h3>
+  <div class="box warn">
+    <b>Sawaal:</b> “India ne Bharati station par kya research kiya?”<br>
+    Aaj ka raasta: main website (station page) → DSpace (reports, scanned, search nahi hota) → NPDC (datasets) → Google Scholar
+    (papers) → YouTube (videos)… <b>5 jagah, aur kahin bhi koi link nahi.</b> Zyada tar log thak ke internet ki unverified
+    jaankari use kar lete hain.
+  </div>
+
+  <h3>Kis-kis ko dikkat hoti hai?</h3>
+  <table>
+    <tr><th>Kaun</th><th>Dikkat</th><th>Nateeja</th></tr>
+    <tr><td><b>NCPOR outreach team</b></td><td>Har news post zero se likhni padti hai, background facts haath se dhoondhne padte hain</td><td>Outreach irregular</td></tr>
+    <tr><td><b>Teachers</b></td><td>India ke apne polar research par koi teaching material nahi</td><td>Bachche videshi examples padhte hain</td></tr>
+    <tr><td><b>Students</b></td><td>Simple sawaal ka bharosemand jawaab nahi milta</td><td>Galat internet content</td></tr>
+    <tr><td><b>Researchers</b></td><td>Purane expedition ka kaam scanned PDFs mein band hai</td><td>Kaam dobara hota hai</td></tr>
+    <tr><td><b>Journalists</b></td><td>Jaldi verified fact chahiye</td><td>News mein galtiyan</td></tr>
+  </table>
+  <div class="box tip">Asli problem “website nahi hai” nahi hai — asli problem hai <b>“links nahi hain”</b>. Humara system wahi missing links banata hai.</div>
+</section>
+
+<!-- ============================== IDEA ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">4</div><div><div class="kicker">Solution</div><h2>Hamara idea — ek “smart librarian”</h2></div></div>
+  <p class="lead">Hum NCPOR se koi naya data type karwane ko nahi bolte. Jo already publish ho chuka hai, wahi utha ke usko
+  <b>padhte, jodte, dhoondhne layak banaate</b> hain — aur AI se likhwaaya gaya har shabd <b>page ke saboot</b> ke saath aata hai.</p>
+
+  <h3>Hamare 4 vaade (promises)</h3>
+  <div class="grid2">
+    <div class="box good"><b>1. Zero naya data entry</b><br>System khud DSpace aur NCPOR news feed se records utha leta hai. Staff ko kuch type nahi karna.</div>
+    <div class="box good"><b>2. Sab kuch juda hua</b><br>Har report, paper aur news → kis expedition, kis station, kis topic, kis saal ka hai.</div>
+    <div class="box good"><b>3. Har line ka saboot</b><br>AI ka har sentence batata hai ki wo kis report ke kis page se aaya. Saboot nahi → jawaab nahi.</div>
+    <div class="box good"><b>4. Insaan ki final approval</b><br>AI sirf draft banata hai. Ek naam wala NCPOR reviewer approve kare tabhi public hota hai.</div>
+  </div>
+
+  <h3>Doosri SIH teams se hum alag kyon hain?</h3>
+  <p>Is problem statement par kai teams ne “AI portal” banaye hain. Hum 4 cheezon mein alag hain:</p>
+  <table>
+    <tr><th>Cheez</th><th>Aam SIH prototype</th><th>Polar Knowledge Index</th></tr>
+    <tr><td>NCPOR ka asli archive use karta hai</td><td><span class="pill p-red">✗ seed/dummy data</span></td><td><span class="pill p-green">✓ 32 real reports</span></td></tr>
+    <tr><td>Staff ko naya data type karna padta hai</td><td><span class="pill p-red">✗ upload forms</span></td><td><span class="pill p-green">✓ automatic harvest</span></td></tr>
+    <tr><td>Har sentence ka fact-check, galat line approval rokti hai</td><td><span class="pill p-red">✗</span></td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>Accuracy naapi gayi (measured)</td><td><span class="pill p-red">✗ sirf claim</span></td><td><span class="pill p-green">✓ verified test set</span></td></tr>
+    <tr><td>Coverage view — kya missing hai</td><td><span class="pill p-red">✗</span></td><td><span class="pill p-green">✓</span></td></tr>
+  </table>
+
+  <div class="box tip">Baaki teams kehti hain “humara AI accurate hai”. Hum kehte hain “humne <b>naapa</b> hai, aur ye raha number” —
+  aur har jawaab ke saath <b>original scanned page</b> dikhate hain. Judges ke liye ye sabse bharosemand cheez hai.</div>
+</section>
+
+<!-- ============================== BIG PICTURE ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">5</div><div><div class="kicker">Overview</div><h2>Poora system ek nazar mein</h2></div></div>
+  <p>Ise ek factory ki assembly line ki tarah socho. Kachcha maal (NCPOR ke reports) ek taraf se aata hai, aur doosri taraf se
+  <b>search, jawaab, lessons aur announcements</b> nikalte hain — beech mein 7 steps.</p>
+
+  <svg viewBox="0 0 760 560" role="img" aria-label="Seven step pipeline">
+    <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <!-- sources -->
+    <rect x="20" y="10" width="220" height="56" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+    <text x="130" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1F6FD1">DSpace (scanned reports)</text>
+    <text x="130" y="52" text-anchor="middle" font-size="10.5" fill="#5B6475">32 reports · 765 papers</text>
+    <rect x="270" y="10" width="220" height="56" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+    <text x="380" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1F6FD1">NCPOR News (RSS)</text>
+    <text x="380" y="52" text-anchor="middle" font-size="10.5" fill="#5B6475">837 posts</text>
+    <rect x="520" y="10" width="220" height="56" rx="10" fill="#F3F4F7" stroke="#CBD5E1" stroke-dasharray="5 4"/>
+    <text x="630" y="34" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5B6475">NPDC (datasets)</text>
+    <text x="630" y="52" text-anchor="middle" font-size="10.5" fill="#5B6475">sirf link — permission baaki</text>
+    <line x1="130" y1="66" x2="330" y2="96" stroke="#1E2761" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="380" y1="66" x2="380" y2="96" stroke="#1E2761" stroke-width="2" marker-end="url(#ar)"/>
+    <!-- steps -->
+    <g font-size="12">
+      <rect x="200" y="100" width="360" height="44" rx="22" fill="#1E2761"/>
+      <text x="380" y="127" text-anchor="middle" fill="#fff" font-weight="700">① Harvest — reports aur news ikattha karo</text>
+      <rect x="200" y="164" width="360" height="44" rx="22" fill="#1F6FD1"/>
+      <text x="380" y="191" text-anchor="middle" fill="#fff" font-weight="700">② Read — scanned pages ko text banao (OCR)</text>
+      <rect x="200" y="228" width="360" height="44" rx="22" fill="#128C7E"/>
+      <text x="380" y="255" text-anchor="middle" fill="#fff" font-weight="700">③ Link — expedition · station · topic · saal</text>
+      <rect x="200" y="292" width="360" height="44" rx="22" fill="#1F6FD1"/>
+      <text x="380" y="319" text-anchor="middle" fill="#fff" font-weight="700">④ Search — shabd + matlab (hybrid)</text>
+      <rect x="200" y="356" width="360" height="44" rx="22" fill="#5B3FA8"/>
+      <text x="380" y="383" text-anchor="middle" fill="#fff" font-weight="700">⑤ AI draft — sirf mile hue pages se likho</text>
+      <rect x="200" y="420" width="360" height="44" rx="22" fill="#D95926"/>
+      <text x="380" y="447" text-anchor="middle" fill="#fff" font-weight="700">⑥ Fact-check — har line page se milao</text>
+      <rect x="200" y="484" width="360" height="44" rx="22" fill="#148A5B"/>
+      <text x="380" y="511" text-anchor="middle" fill="#fff" font-weight="700">⑦ Human review — naam wala reviewer approve kare</text>
+    </g>
+    <g stroke="#1E2761" stroke-width="2" marker-end="url(#ar)">
+      <line x1="380" y1="144" x2="380" y2="162"/><line x1="380" y1="208" x2="380" y2="226"/>
+      <line x1="380" y1="272" x2="380" y2="290"/><line x1="380" y1="336" x2="380" y2="354"/>
+      <line x1="380" y1="400" x2="380" y2="418"/><line x1="380" y1="464" x2="380" y2="482"/>
+    </g>
+    <!-- side outputs -->
+    <g font-size="11">
+      <rect x="590" y="236" width="160" height="104" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="670" y="258" text-anchor="middle" font-weight="700" fill="#148A5B">Public website</text>
+      <text x="670" y="278" text-anchor="middle" fill="#1F2937">Search · Ask</text>
+      <text x="670" y="295" text-anchor="middle" fill="#1F2937">Original page viewer</text>
+      <text x="670" y="312" text-anchor="middle" fill="#1F2937">Expedition pages</text>
+      <text x="670" y="329" text-anchor="middle" fill="#1F2937">Coverage view</text>
+      <rect x="590" y="430" width="160" height="104" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="670" y="452" text-anchor="middle" font-weight="700" fill="#148A5B">Published</text>
+      <text x="670" y="472" text-anchor="middle" fill="#1F2937">Cited answers</text>
+      <text x="670" y="489" text-anchor="middle" fill="#1F2937">Lessons (EN + HI)</text>
+      <text x="670" y="506" text-anchor="middle" fill="#1F2937">Web + social posts</text>
+      <text x="670" y="523" text-anchor="middle" fill="#1F2937">with reviewer name</text>
+    </g>
+    <line x1="560" y1="314" x2="588" y2="300" stroke="#148A5B" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="560" y1="506" x2="588" y2="490" stroke="#148A5B" stroke-width="2" marker-end="url(#ar)"/>
+    <g font-size="11">
+      <rect x="10" y="300" width="170" height="90" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+      <text x="95" y="322" text-anchor="middle" font-weight="700" fill="#D95926">Saboot nahi mila?</text>
+      <text x="95" y="342" text-anchor="middle" fill="#1F2937">“No NCPOR source</text>
+      <text x="95" y="358" text-anchor="middle" fill="#1F2937">found for this.”</text>
+      <text x="95" y="377" text-anchor="middle" fill="#5B6475">(jawaab mana)</text>
+    </g>
+    <line x1="200" y1="318" x2="182" y2="330" stroke="#D95926" stroke-width="2" marker-end="url(#ar)"/>
+  </svg>
+  <p class="small center">Steps ①–④ “archive” hissa hain (bina AI ke bhi chalte hain). Steps ⑤–⑦ “AI + insaan” hissa hain.</p>
+</section>
+
+<!-- ============================== STEP 1 HARVEST ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">6</div><div><div class="kicker">Step 1</div><h2>Reports ikattha karna (Harvesting)</h2></div></div>
+  <p><b>Harvesting</b> ka matlab hai doosri website se records apne aap copy karna — bilkul waise jaise khet se fasal kaatte hain.
+  Humara program DSpace aur NCPOR news feed se ye kaam karta hai.</p>
+
+  <div class="grid2">
+    <div>
+      <h3>DSpace ka structure (ek tree jaisa)</h3>
+      <svg viewBox="0 0 360 250" role="img" aria-label="Report section paper tree">
+        <rect x="90" y="8" width="180" height="40" rx="8" fill="#1E2761"/>
+        <text x="180" y="25" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">REPORT (community)</text>
+        <text x="180" y="40" text-anchor="middle" font-size="9.5" fill="#CADCFC">9th Expedition Report</text>
+        <g stroke="#9DBCE8" stroke-width="2"><line x1="180" y1="48" x2="80" y2="78"/><line x1="180" y1="48" x2="280" y2="78"/></g>
+        <rect x="10" y="78" width="140" height="40" rx="8" fill="#1F6FD1"/>
+        <text x="80" y="95" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">SECTION</text>
+        <text x="80" y="110" text-anchor="middle" font-size="9.5" fill="#fff">5] Earth Sciences</text>
+        <rect x="210" y="78" width="140" height="40" rx="8" fill="#1F6FD1"/>
+        <text x="280" y="95" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">SECTION</text>
+        <text x="280" y="110" text-anchor="middle" font-size="9.5" fill="#fff">2] Astronomy</text>
+        <g stroke="#9DBCE8" stroke-width="2"><line x1="80" y1="118" x2="40" y2="148"/><line x1="80" y1="118" x2="120" y2="148"/></g>
+        <rect x="5" y="148" width="75" height="44" rx="6" fill="#EAF2FC" stroke="#1F6FD1"/>
+        <text x="42" y="167" text-anchor="middle" font-size="9.5" fill="#1F2937" font-weight="700">PAPER</text>
+        <text x="42" y="182" text-anchor="middle" font-size="8.5" fill="#1F2937">Glacier paper</text>
+        <rect x="85" y="148" width="75" height="44" rx="6" fill="#EAF2FC" stroke="#1F6FD1"/>
+        <text x="122" y="167" text-anchor="middle" font-size="9.5" fill="#1F2937" font-weight="700">PAPER</text>
+        <text x="122" y="182" text-anchor="middle" font-size="8.5" fill="#1F2937">Rocks paper</text>
+        <line x1="42" y1="192" x2="42" y2="212" stroke="#D95926" stroke-width="2"/>
+        <rect x="5" y="212" width="160" height="30" rx="6" fill="#FDF0E9" stroke="#D95926"/>
+        <text x="85" y="232" text-anchor="middle" font-size="9.5" fill="#D95926" font-weight="700">PDF → pages 1, 2, 3…</text>
+      </svg>
+    </div>
+    <div>
+      <h3>Hum ek “achhe mehmaan” ki tarah aate hain</h3>
+      <ul>
+        <li><b>robots.txt padhte hain</b> — har website ek file rakhti hai jo batati hai ki bots kya le sakte hain. Hum uska paalan karte hain.</li>
+        <li><b>1 second mein sirf 1 request</b> — NCPOR ka server overload na ho.</li>
+        <li><b>Har file ek hi baar download</b> — copy apne computer par cache mein, dobara nahi maangte.</li>
+        <li><b>Original wahin rehta hai</b> — hum PDF dobara publish nahi karte, sirf link + padha hua text rakhte hain.</li>
+        <li><b>NPDC ko nahi chhuaa</b> — wahan ke datasets ke liye NCPOR ki permission chahiye.</li>
+      </ul>
+      <div class="box note"><b>OAI-PMH kya hai?</b> Libraries ka ek standard “catalogue copy” protocol. DSpace mein ye pehle se ON tha — isliye humne bina scraping ke saaf-suthre records le liye.</div>
+    </div>
+  </div>
+
+  <h3>Harvest ka result</h3>
+  <div class="grid4">
+    <div class="stat"><div class="n" style="color:var(--navy)">32</div><div class="l">report communities</div></div>
+    <div class="stat"><div class="n" style="color:var(--blue)">765</div><div class="l">papers (metadata)</div></div>
+    <div class="stat"><div class="n" style="color:var(--orange)">264</div><div class="l">PDFs download (10 reports)</div></div>
+    <div class="stat"><div class="n" style="color:var(--teal)">837</div><div class="l">news posts</div></div>
+  </div>
+  <div class="box tip">Dobara chalao to system kuch bhi dobara download nahi karta aur ek bhi duplicate record nahi banata — humne test kiya: <b>0 network requests, 0 naye duplicates</b>.</div>
+</section>
+
+<!-- ============================== STEP 2 OCR ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">7</div><div><div class="kicker">Step 2</div><h2>Purane scans padhna (Text layer + OCR)</h2></div></div>
+  <p>Scanned PDF asal mein <b>photo</b> hoti hai — computer ke liye usme “shabd” nahi, sirf pixels hote hain. Use padhne ke 2 tareeke:</p>
+
+  <svg viewBox="0 0 760 170" role="img" aria-label="Text layer ya OCR ka decision">
+    <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <rect x="10" y="55" width="140" height="56" rx="10" fill="#1E2761"/>
+    <text x="80" y="80" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">Ek PDF page</text>
+    <text x="80" y="98" text-anchor="middle" font-size="10" fill="#CADCFC">(scanned)</text>
+    <polygon points="250,40 330,83 250,126 170,83" fill="#FFF7DB" stroke="#C99A1A"/>
+    <text x="250" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A6100">Andar text</text>
+    <text x="250" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#8A6100">pehle se hai?</text>
+    <line x1="150" y1="83" x2="168" y2="83" stroke="#1E2761" stroke-width="2" marker-end="url(#ar2)"/>
+    <line x1="330" y1="70" x2="420" y2="35" stroke="#148A5B" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="365" y="40" font-size="10.5" fill="#148A5B" font-weight="700">HAAN</text>
+    <line x1="330" y1="96" x2="420" y2="131" stroke="#D95926" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="365" y="136" font-size="10.5" fill="#D95926" font-weight="700">NAHI</text>
+    <rect x="422" y="10" width="330" height="56" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+    <text x="587" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#148A5B">Text layer use karo (fast, accurate)</text>
+    <text x="587" y="52" text-anchor="middle" font-size="10" fill="#1F2937">scanning ke time kisi ne text chipka diya tha</text>
+    <rect x="422" y="104" width="330" height="56" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+    <text x="587" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#D95926">OCR — Tesseract photo ko padhta hai</text>
+    <text x="587" y="146" text-anchor="middle" font-size="10" fill="#1F2937">har page ka confidence score (0–100%) save</text>
+  </svg>
+
+  <div class="grid2" style="margin-top:6px">
+    <figure class="fig-scan"><img src="img/scan_glacier_p248.jpg" alt="9th Expedition report ka asli scanned page 248, Dakshin Gangotri glacier ka map">
+      <figcaption>Asli scan: 9th Expedition report, printed page 248 — Dakshin Gangotri glacier snout ka map</figcaption></figure>
+    <div>
+      <h3>Har page ke saath kya save hota hai?</h3>
+      <ul>
+        <li><b>Text</b> — searchable</li>
+        <li><b>Kahan se aaya</b> — text layer ya OCR</li>
+        <li><b>OCR confidence</b> — kitna bharosa</li>
+        <li><b>Printed page number</b> — jaise “248” (PDF ka page 10 ≠ report ka page 248!)</li>
+        <li><b>Page ki image</b> — taaki “View original page” dikha sakein</li>
+      </ul>
+      <div class="box tip">Har jawaab ke saath hum ye scan dikhate hain. Agar OCR ne galti ki ho, to padhne wala khud asli page dekh ke check kar sakta hai.</div>
+      <p><b>Chunks:</b> har page ke text ko chhote tukdon (≈1,500 characters) mein kaata jaata hai. Ek tukda kabhi do pages mein nahi phailta — taaki har citation <b>ek exact page</b> bataye. Total: <b>6,377 chunks</b>.</p>
+    </div>
+  </div>
+
+  <h3>Real data — 10 reports, 3,266 pages</h3>
+  <div class="legend"><span><i style="background:var(--blue)"></i>Text layer se</span><span><i style="background:var(--orange)"></i>OCR se</span></div>
+  <div class="bar-row"><b>R1</b><div class="bar"><div class="t" style="width:40.2%"></div><div class="o" style="width:12.1%"></div></div><span>242 pg</span></div>
+  <div class="bar-row"><b>R4</b><div class="bar"><div class="t" style="width:35.6%"></div><div class="o" style="width:5.6%"></div></div><span>191 pg</span></div>
+  <div class="bar-row"><b>R9</b><div class="bar"><div class="t" style="width:55.1%"></div><div class="o" style="width:13.2%"></div></div><span>316 pg</span></div>
+  <div class="bar-row"><b>R11</b><div class="bar"><div class="t" style="width:53.8%"></div><div class="o" style="width:20.9%"></div></div><span>346 pg</span></div>
+  <div class="bar-row"><b>R13</b><div class="bar"><div class="t" style="width:70.6%"></div><div class="o" style="width:15.6%"></div></div><span>399 pg</span></div>
+  <div class="bar-row"><b>R16</b><div class="bar"><div class="t" style="width:66.3%"></div><div class="o" style="width:31.5%"></div></div><span>453 pg</span></div>
+  <div class="bar-row"><b>R19</b><div class="bar"><div class="t" style="width:55.1%"></div><div class="o" style="width:7.6%"></div></div><span>290 pg</span></div>
+  <div class="bar-row"><b>R22</b><div class="bar"><div class="t" style="width:40.8%"></div><div class="o" style="width:15.8%"></div></div><span>262 pg</span></div>
+  <div class="bar-row"><b>R26</b><div class="bar"><div class="t" style="width:92.4%"></div><div class="o" style="width:7.6%"></div></div><span>463 pg</span></div>
+  <div class="bar-row"><b>R30</b><div class="bar"><div class="t" style="width:0.2%"></div><div class="o" style="width:65.4%"></div></div><span>304 pg</span></div>
+  <p class="small">Finding: 10 mein se 9 reports ke 68–92% pages mein pehle se text layer tha. Report 30 poora OCR karna pada — average confidence <b>90%</b>. Saare 10 reports ~2 minute mein padh liye gaye (laptop par).</p>
+</section>
+
+<!-- ============================== STEP 3 LINK ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">8</div><div><div class="kicker">Step 3</div><h2>Sab cheezon ko jodna (Linking)</h2></div></div>
+  <p>Ye humara <b>sabse important step</b> hai — yahi “missing links” banata hai. Har item (report, paper, news) ko 4 cheezon se joda jaata hai:</p>
+
+  <svg viewBox="0 0 760 200" role="img" aria-label="Ek paper chaar cheezon se juda">
+    <rect x="270" y="72" width="220" height="60" rx="12" fill="#1E2761"/>
+    <text x="380" y="96" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">PAPER</text>
+    <text x="380" y="115" text-anchor="middle" font-size="9.5" fill="#CADCFC">“Monitoring of Icebergs… Dakshin Gangotri Glacier”</text>
+    <g font-size="11">
+      <rect x="10" y="10" width="200" height="54" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+      <text x="110" y="32" text-anchor="middle" font-weight="700" fill="#1F6FD1">EXPEDITION</text>
+      <text x="110" y="50" text-anchor="middle" fill="#1F2937">ISEA-9</text>
+      <rect x="550" y="10" width="200" height="54" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="650" y="32" text-anchor="middle" font-weight="700" fill="#148A5B">STATION</text>
+      <text x="650" y="50" text-anchor="middle" fill="#1F2937">Dakshin Gangotri</text>
+      <rect x="10" y="138" width="200" height="54" rx="10" fill="#EFEAFB" stroke="#5B3FA8"/>
+      <text x="110" y="160" text-anchor="middle" font-weight="700" fill="#5B3FA8">TOPIC</text>
+      <text x="110" y="178" text-anchor="middle" fill="#1F2937">Glaciology</text>
+      <rect x="550" y="138" width="200" height="54" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+      <text x="650" y="160" text-anchor="middle" font-weight="700" fill="#D95926">YEAR</text>
+      <text x="650" y="178" text-anchor="middle" fill="#1F2937">1994 (page 1 header se)</text>
+    </g>
+    <g stroke="#9DBCE8" stroke-width="2.5">
+      <line x1="210" y1="40" x2="270" y2="85"/><line x1="550" y1="40" x2="490" y2="85"/>
+      <line x1="210" y1="165" x2="270" y2="120"/><line x1="550" y1="165" x2="490" y2="120"/>
+    </g>
+  </svg>
+
+  <h3>Link kaise banta hai? Pehle rules, phir AI</h3>
+  <table>
+    <tr><th>Tareeka</th><th>Example</th><th>Status</th></tr>
+    <tr><td><b>Report ka title padho</b></td><td>“Scientific Report Of <b>Ninth</b> Indian Expedition” → ISEA-9 (“Twenty First” → 21 bhi samajhta hai)</td><td><span class="pill p-green">Confirmed</span></td></tr>
+    <tr><td><b>NCPOR ka section</b></td><td>Paper “5] Earth Sciences” section mein hai → topic Geology</td><td><span class="pill p-green">Confirmed</span></td></tr>
+    <tr><td><b>Printed header</b></td><td>Page 1 par “Scientific Report, 1994” → year 1994</td><td><span class="pill p-green">Confirmed</span></td></tr>
+    <tr><td><b>Keywords</b></td><td>Text mein “Maitri” 2+ baar → station Maitri</td><td><span class="pill p-amber">Unconfirmed</span></td></tr>
+    <tr><td><b>AI (fallback)</b></td><td>Jahan rules fail hon, AI fixed list mein se topic chunta hai + saboot quote</td><td><span class="pill p-amber">Unconfirmed</span></td></tr>
+  </table>
+  <div class="box note"><b>Rule simple hai:</b> jo NCPOR ne khud likha (title, section, printed page) → <b>confirmed</b>. Jo humne ya AI ne andaaza lagaya → <b>unconfirmed</b>, jab tak ek curator (NCPOR staff) “Confirm” ya “Reject” na dabaye. Har link ke saath <b>wajah (evidence)</b> bhi save hoti hai.</div>
+
+  <div class="grid4">
+    <div class="stat"><div class="n" style="color:var(--green)">32/32</div><div class="l">reports ka expedition link</div></div>
+    <div class="stat"><div class="n" style="color:var(--green)">765/765</div><div class="l">papers ka expedition link</div></div>
+    <div class="stat"><div class="n" style="color:var(--blue)">3,616</div><div class="l">links rules se</div></div>
+    <div class="stat"><div class="n" style="color:var(--purple)">65</div><div class="l">links AI se (unconfirmed)</div></div>
+  </div>
+
+  <div class="box warn"><b>Ek galti jo humne pakdi:</b> pehle version ne news ki line “The <b>first</b> team of the 45th ISEA” ko “Expedition 1” samajh liya,
+  aur “42nd <b>Chinese</b> Antarctic Expedition” ko India ka ISEA-2! Humne rule sakht kiya — number ke turant baad “(Indian) (Scientific) Expedition”
+  hona chahiye — aur in galtiyon ke <b>tests</b> likhe taaki dobara na ho.</div>
+  <p><b>Bonus:</b> news se humein <b>expeditions 33–46</b> ka pata chala jinki report DSpace mein hai hi nahi — ye coverage view mein dikhta hai (chapter 14).</p>
+</section>
+
+<!-- ============================== STEP 4 SEARCH ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">9</div><div><div class="kicker">Step 4</div><h2>Search — shabd aur matlab, dono</h2></div></div>
+  <p>Purani reports alag shabd use karti hain. Student likhta hai <b>“glacier kitna pighla”</b>, report mein likha hai <b>“ablation”</b> ya
+  <b>“secular movement”</b>. Normal search ye match nahi kar paata. Isliye hum <b>2 search</b> ek saath chalaate hain:</p>
+
+  <div class="grid2">
+    <div class="box note"><b>🔤 Keyword search (shabd)</b><br>Exact shabd dhoondhta hai — jaise “Maitri”, “ISEA-9”, instrument codes.
+    <br><span class="small">Tool: PostgreSQL full-text search</span><br>✓ Exact naam kabhi miss nahi · ✗ Synonyms nahi samajhta</div>
+    <div class="box note"><b>🧠 Meaning search (matlab)</b><br>Har text ko <b>768 numbers ki list (embedding)</b> mein badalta hai. Milte-julte matlab = milte-julte numbers.
+    <br><span class="small">Tool: multilingual-e5 model, laptop par chalta hai</span><br>✓ “moving” ≈ “movement” · ✗ Exact codes kabhi miss</div>
+  </div>
+  <div class="box tip">Embedding ko aise samjho: har paragraph ko ek <b>naksha (map) par point</b> bana diya. “Glacier pighalna” aur “glacier ablation” map par paas-paas aate hain, “cricket match” door. Sawaal ka point banao, aur sabse paas wale paragraphs utha lo.</div>
+
+  <h3>Dono ko milana — “Hybrid” (RRF)</h3>
+  <p>Dono searches apni-apni ranking deti hain. <b>Reciprocal Rank Fusion</b> ek simple formula hai: jo paragraph kisi bhi list mein upar hai, wo final list mein bhi upar aata hai. Koi tuning nahi chahiye.</p>
+
+  <h3>Jawaab kab MANA karna hai? (Refusal)</h3>
+  <svg viewBox="0 0 760 150" role="img" aria-label="Similarity number line with threshold 0.82">
+    <line x1="40" y1="70" x2="720" y2="70" stroke="#CBD5E1" stroke-width="6" stroke-linecap="round"/>
+    <rect x="40" y="60" width="380" height="20" fill="#FDECEA"/>
+    <rect x="420" y="60" width="300" height="20" fill="#E8F6EF"/>
+    <line x1="420" y1="35" x2="420" y2="105" stroke="#1E2761" stroke-width="3"/>
+    <text x="420" y="28" text-anchor="middle" font-size="12" font-weight="700" fill="#1E2761">Threshold 0.82</text>
+    <g font-size="10.5">
+      <circle cx="171" cy="70" r="7" fill="#C0392B"/><text x="171" y="100" text-anchor="middle" fill="#C0392B">0.77 cricket</text>
+      <circle cx="330" cy="70" r="7" fill="#C0392B"/><text x="330" y="125" text-anchor="middle" fill="#C0392B">0.80 Mars rovers</text>
+      <circle cx="510" cy="70" r="7" fill="#148A5B"/><text x="510" y="100" text-anchor="middle" fill="#148A5B">0.84 icebergs</text>
+      <circle cx="580" cy="70" r="7" fill="#148A5B"/><text x="590" y="125" text-anchor="middle" fill="#148A5B">0.85 geomagnetic</text>
+      <circle cx="660" cy="70" r="7" fill="#148A5B"/><text x="660" y="100" text-anchor="middle" fill="#148A5B">0.88 glacier</text>
+    </g>
+    <text x="230" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#C0392B">MANA: “No NCPOR source found for this.”</text>
+    <text x="580" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#148A5B">JAWAAB do (saboot ke saath)</text>
+  </svg>
+  <p class="small">Ye numbers real hain — 7 sawaalon par naapa. Archive wale sawaal 0.84–0.88, bahar ke sawaal 0.77–0.80. Isliye line 0.82 par khinchi.</p>
+
+  <figure class="fig-sm"><img src="img/s5_search.png" alt="Search page: Dakshin Gangotri glacier movement ke liye results">
+    <figcaption>Asli search: “Dakshin Gangotri glacier movement” → pehla result 9th Expedition ka glacier paper, printed page 248. “These passages are the reports' own words, not AI text.”</figcaption></figure>
+</section>
+
+<!-- ============================== STEP 5 RAG ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">10</div><div><div class="kicker">Step 5 · AI</div><h2>AI se jawaab likhwaana (RAG)</h2></div></div>
+  <p><b>RAG</b> = <i>Retrieval-Augmented Generation</i>. Bhaari naam, simple idea: <b>pehle dhoondo, phir sirf usi se likho.</b>
+  AI ko apni yaaddasht se kuch bolne ki ijaazat nahi — sirf jo pages humne diye, unhi se.</p>
+
+  <svg viewBox="0 0 760 210" role="img" aria-label="RAG flow">
+    <defs><marker id="ar3" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <g font-size="11">
+      <rect x="5" y="70" width="130" height="66" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+      <text x="70" y="96" text-anchor="middle" font-weight="700" fill="#1F6FD1">Sawaal</text>
+      <text x="70" y="114" text-anchor="middle" fill="#1F2937">“Glacier move</text>
+      <text x="70" y="128" text-anchor="middle" fill="#1F2937">ho raha hai?”</text>
+      <rect x="160" y="70" width="130" height="66" rx="10" fill="#1F6FD1"/>
+      <text x="225" y="96" text-anchor="middle" font-weight="700" fill="#fff">Hybrid search</text>
+      <text x="225" y="114" text-anchor="middle" fill="#fff">top 8 passages</text>
+      <polygon points="370,58 430,103 370,148 310,103" fill="#FFF7DB" stroke="#C99A1A"/>
+      <text x="370" y="100" text-anchor="middle" font-weight="700" fill="#8A6100">Score</text>
+      <text x="370" y="114" text-anchor="middle" font-weight="700" fill="#8A6100">≥ 0.82?</text>
+      <rect x="455" y="70" width="140" height="66" rx="10" fill="#5B3FA8"/>
+      <text x="525" y="94" text-anchor="middle" font-weight="700" fill="#fff">Gemini / local AI</text>
+      <text x="525" y="112" text-anchor="middle" fill="#EFEAFB">“Sirf in passages</text>
+      <text x="525" y="126" text-anchor="middle" fill="#EFEAFB">se likho”</text>
+      <rect x="620" y="70" width="135" height="66" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="687" y="94" text-anchor="middle" font-weight="700" fill="#148A5B">Draft</text>
+      <text x="687" y="112" text-anchor="middle" fill="#1F2937">har line ke saath</text>
+      <text x="687" y="126" text-anchor="middle" fill="#1F2937">[passage IDs]</text>
+      <rect x="290" y="168" width="160" height="38" rx="10" fill="#FDECEA" stroke="#C0392B"/>
+      <text x="370" y="192" text-anchor="middle" font-weight="700" fill="#C0392B">NAHI → Mana karo</text>
+    </g>
+    <g stroke="#1E2761" stroke-width="2" marker-end="url(#ar3)">
+      <line x1="135" y1="103" x2="158" y2="103"/><line x1="290" y1="103" x2="308" y2="103"/>
+      <line x1="430" y1="103" x2="453" y2="103"/><line x1="595" y1="103" x2="618" y2="103"/>
+      <line x1="370" y1="148" x2="370" y2="166"/>
+    </g>
+    <text x="441" y="128" text-anchor="middle" font-size="9" fill="#148A5B" font-weight="700">HAAN</text>
+  </svg>
+
+  <h3>AI ko diye gaye sakht niyam (rules)</h3>
+  <ul>
+    <li>Har fact wali line ke saath un passages ke <b>IDs</b> do jo use support karte hain (1–3 hi, saare nahi).</li>
+    <li>Jo passages mein nahi likha — numbers, dates, naam — <b>mat jodo</b>, chahe tumhe pata ho.</li>
+    <li>OCR wale text mein agar number saaf nahi dikhta, to <b>number mat likho</b>.</li>
+    <li>Kisi pehchaane jaa sakne wale insaan ki <b>health / psychology</b> par mat likho.</li>
+    <li>Agar passages jawaab nahi dete — “answerable: false” bolo, <b>kuch mat banao</b>.</li>
+  </ul>
+  <div class="box note"><b>Safety net:</b> agar AI koi aisa passage ID likh de jo humne diya hi nahi tha, system wo citation <b>khud hata deta hai</b>. Aur agar AI kahe “ye line fact nahi hai, check mat karo” — system nahi maanta (ye humne real run mein pakda aur fix kiya).</div>
+
+  <h3>3 tarah ke drafts</h3>
+  <div class="grid3">
+    <div class="box"><b>💬 Cited answer</b><br>Student ke sawaal ka 2–5 line ka jawaab, har line page se judi.</div>
+    <div class="box"><b>📘 Lesson unit</b><br>Class 6–12 ke liye: aasaan + advanced explainer, starter sawaal, activity, 5 quiz sawaal, teacher notes.</div>
+    <div class="box"><b>📣 Announcement</b><br>Expedition par website post + X, Facebook, Instagram posts — sirf confirmed records se.</div>
+  </div>
+  <p><b>Hindi:</b> approved English draft ka Hindi anuvaad banta hai, uski bhi alag se jaanch aur approval hoti hai.</p>
+</section>
+
+<!-- ============================== STEP 6 CHECKER ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">11</div><div><div class="kicker">Step 6 · AI</div><h2>Fact-checker — har line ki jaanch</h2></div></div>
+  <p>Draft banne ke baad ek <b>doosra AI pass</b> har sentence ko uske cited passage se milata hai — jaise teacher copy check karta hai — aur 3 mein se ek label lagata hai:</p>
+  <div class="grid3">
+    <div class="box good"><span class="pill p-green">✓ Supported</span><br>Har detail (naam, number, date, jagah) passage mein likhi hai.</div>
+    <div class="box warn"><span class="pill p-amber">! Partly supported</span><br>Main baat sahi, par koi detail passage mein nahi ya zyada badha-chadha ke.</div>
+    <div class="box bad"><span class="pill p-red">✗ Not supported</span><br>Passage mein nahi likha, ya ulta likha hai. <b>Approval block!</b></div>
+  </div>
+
+  <figure><img src="img/review_lesson.png" alt="Review screen jisme ek red sentence aur green sentences dikh rahe hain">
+    <figcaption>Asli review screen: Class 11 glacier lesson — 21 supported, 2 partly, 4 not supported. Pehli line “Glaciers are large bodies of ice that move slowly” RED hai kyunki ye general knowledge hai, NCPOR ke passages mein nahi.</figcaption></figure>
+
+  <div class="grid2">
+    <div class="box bad"><b>Real example — red flag:</b><br>“Glaciers are large bodies of ice that move slowly.” → <b>✗ Not supported</b>.
+    Baat sach hai, par diye gaye NCPOR pages mein nahi likhi. Humara system sirf <b>saboot wali</b> baat chhapta hai. Reviewer ise delete karega ya source jodega.</div>
+    <div class="box warn"><b>Real example — Hindi galti:</b><br>“austral summer” (dakshini golaardh ki garmi) ka anuvaad AI ne <b>“ऑस्ट्रेलियाई गर्मी”</b> (Australia ki garmi) kar diya — aur checker ne pass kar diya!
+    Humne glossary jodi, ab sahi aata hai: <b>“दक्षिणी गोलार्ध की गर्मी”</b>. <br><i>Seekh: AI checker bhi galti karta hai — isliye insaan ki approval zaroori hai.</i></div>
+  </div>
+  <div class="box tip">Checker ek <b>chhanni (filter)</b> hai, judge nahi. Ye reviewer ka kaam aasaan karta hai — red lines pe dhyaan do — par final faisla insaan ka hai.</div>
+</section>
+
+<!-- ============================== STEP 7 REVIEW ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">12</div><div><div class="kicker">Step 7 · Insaan</div><h2>Human approval + audit log</h2></div></div>
+  <p>AI ka likha kuch bhi <b>tab tak public nahi hota</b> jab tak ek naam wala reviewer approve aur publish na kare. Har draft ek safar tay karta hai:</p>
+
+  <svg viewBox="0 0 760 190" role="img" aria-label="Draft status lifecycle">
+    <defs><marker id="ar4" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <g font-size="11.5" font-weight="700">
+      <rect x="10" y="40" width="130" height="50" rx="25" fill="#5B3FA8"/><text x="75" y="70" text-anchor="middle" fill="#fff">AI draft</text>
+      <rect x="175" y="40" width="140" height="50" rx="25" fill="#D95926"/><text x="245" y="70" text-anchor="middle" fill="#fff">Auto-checked</text>
+      <rect x="350" y="40" width="130" height="50" rx="25" fill="#1F6FD1"/><text x="415" y="70" text-anchor="middle" fill="#fff">Approved</text>
+      <rect x="515" y="40" width="130" height="50" rx="25" fill="#148A5B"/><text x="580" y="70" text-anchor="middle" fill="#fff">Published</text>
+      <rect x="350" y="135" width="130" height="44" rx="22" fill="#C0392B"/><text x="415" y="162" text-anchor="middle" fill="#fff">Rejected</text>
+    </g>
+    <g stroke="#1E2761" stroke-width="2" marker-end="url(#ar4)">
+      <line x1="140" y1="65" x2="173" y2="65"/><line x1="315" y1="65" x2="348" y2="65"/><line x1="480" y1="65" x2="513" y2="65"/>
+      <line x1="245" y1="90" x2="350" y2="150"/>
+    </g>
+    <g font-size="9.5" fill="#5B6475">
+      <text x="157" y="30" text-anchor="middle">checker</text>
+      <text x="332" y="30" text-anchor="middle">reviewer</text>
+      <text x="497" y="30" text-anchor="middle">reviewer</text>
+      <text x="680" y="70">public website</text>
+      <text x="280" y="140">reviewer</text>
+    </g>
+    <text x="415" y="115" text-anchor="middle" font-size="9.5" fill="#C0392B" font-weight="700">red line ho to approve ho hi nahi sakta</text>
+  </svg>
+
+  <div class="grid2">
+    <div>
+      <h3>Kaun kya kar sakta hai? (Roles)</h3>
+      <table>
+        <tr><th>Role</th><th>Kya karta hai</th></tr>
+        <tr><td><b>Public</b></td><td>Sirf padhta hai — login nahi, likh nahi sakta</td></tr>
+        <tr><td><b>Curator</b></td><td>Machine links confirm/reject karta hai, drafts banwata hai</td></tr>
+        <tr><td><b>Reviewer</b></td><td>Approve, reject, publish, galti ho to correction</td></tr>
+        <tr><td><b>Admin</b></td><td>Sab kuch</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Audit log — “CCTV camera”</h3>
+      <p>Har action record hota hai: kisne, kab, kya kiya — login, draft bana, line edit hui, approve hua.</p>
+      <div class="box note"><b>Append-only:</b> database khud ek niyam lagata hai ki purani entry ko <b>na badla jaa sakta, na mitaaya</b> — chahe code mein bug ho. Test se verify kiya gaya.</div>
+      <p><b>Galti publish ho gayi?</b> Chupke se badalte nahi — naya version banta hai “correction note” ke saath, purana history mein rehta hai.</p>
+    </div>
+  </div>
+  <figure class="fig-sm"><img src="img/s5_answer.png" alt="Answer draft review screen jisme chaar green supported sentences hain">
+    <figcaption>Asli answer draft: “Has India measured how the Dakshin Gangotri glacier is moving?” — 4 mein se 4 lines ✓ supported, har ek ka source dekh sakte ho. Abhi “Auto-checked” — reviewer ka intezaar.</figcaption></figure>
+</section>
+
+<!-- ============================== WEBSITE TOUR ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">13</div><div><div class="kicker">Product</div><h2>Website ka tour</h2></div></div>
+  <div class="grid2">
+    <div>
+      <h3>Public hissa (koi bhi dekh sakta hai)</h3>
+      <table>
+        <tr><th>Page</th><th>Kaam</th></tr>
+        <tr><td>Search</td><td>Poore archive mein dhoondo (hybrid / exact / meaning)</td></tr>
+        <tr><td>Ask a question</td><td>Sawaal pucho → matching passages + approved jawaab, ya “mana”</td></tr>
+        <tr><td>Page viewer</td><td>Scan aur uska text side-by-side</td></tr>
+        <tr><td>Expeditions</td><td>Har expedition ka ek page: report, papers, news, stories</td></tr>
+        <tr><td>Coverage</td><td>Kis expedition ki report hai, kiski nahi</td></tr>
+        <tr><td>Lessons & stories</td><td>Approved content, English/हिन्दी</td></tr>
+        <tr><td>Accuracy</td><td>Evaluation ke numbers</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Staff console (login ke saath)</h3>
+      <table>
+        <tr><th>Screen</th><th>Kaam</th></tr>
+        <tr><td>Review queue</td><td>Red/amber/green lines, approve/reject/publish</td></tr>
+        <tr><td>Draft new content</td><td>Answer, lesson, announcement banwao</td></tr>
+        <tr><td>Confirm links</td><td>Machine links ko haan/na</td></tr>
+        <tr><td>Audit log</td><td>Sab actions ki history</td></tr>
+      </table>
+      <div class="box note">Accessibility: keyboard se chal jaata hai, sahi colour contrast, “Skip to content”, English ↔ हिन्दी toggle — government websites ke <b>GIGW 3.0 / WCAG 2.1</b> rules ke hisaab se.</div>
+    </div>
+  </div>
+  <div class="grid3">
+    <figure><img src="img/s2_page_viewer.png" alt="Page viewer: scan aur extracted text side by side"><figcaption>Page viewer: left mein asli scan, right mein padha hua text.</figcaption></figure>
+    <figure><img src="img/expedition_isea9.png" alt="Ninth expedition ka page"><figcaption>Expedition page (ISEA-9): report aur papers, NCPOR ke sections ke hisaab se.</figcaption></figure>
+    <figure><img src="img/ask_refusal.png" alt="Mars rovers sawaal par refusal"><figcaption>“How fast do Mars rovers drive?” → <b>No NCPOR source found</b>, wajah ke saath.</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============================== COVERAGE ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">14</div><div><div class="kicker">Insight</div><h2>Coverage view — kya missing hai</h2></div></div>
+  <p>Ye feature kisi aur team ke paas nahi. Ye NCPOR leadership ko ek nazar mein batata hai: <b>kis expedition ka kya public hai aur kya nahi.</b></p>
+  <div class="grid2">
+    <div class="center">
+      <div class="donut"></div>
+      <div class="legend" style="text-align:left;margin-top:8px">
+        <div><span><i style="background:var(--green)"></i><b>29</b> — public report hai</span></div>
+        <div><span><i style="background:var(--orange)"></i><b>2</b> — report listed, par “Not Published” (7th, 8th)</span></div>
+        <div><span><i style="background:var(--red)"></i><b>21</b> — koi report nahi mili</span></div>
+      </div>
+    </div>
+    <div>
+      <h3>Kya pata chala?</h3>
+      <ul>
+        <li>DSpace mein reports sirf <b>1 se 30</b> tak hain.</li>
+        <li><b>7th aur 8th</b> ki report listed hai par “Not Published”.</li>
+        <li>NCPOR news se <b>12 baad ke expeditions</b> (33–37, 40–46) ka pata chala — inki report DSpace mein hai hi nahi.</li>
+        <li>Dataset links 0 — kyunki NPDC access NCPOR ki permission ke baad milega.</li>
+      </ul>
+      <div class="box warn"><b>Imaandari:</b> “—” ka matlab hai “humare harvested sources mein nahi mila”, ye nahi ki exist hi nahi karta. Jo expeditions sirf numbering se andaaza hain, unhe saaf “inferred” likha jaata hai.</div>
+    </div>
+  </div>
+  <figure><img src="img/coverage.png" alt="Coverage page screenshot"><figcaption>Asli coverage page: har expedition ek row — public report, papers, dataset links, news, approved stories.</figcaption></figure>
+  <div class="box tip">Ye page NCPOR ko batata hai ki <b>agla outreach effort kahan lagao</b> — jin expeditions ki koi public kahani nahi, wahan se shuru karo.</div>
+</section>
+
+<!-- ============================== MODELS ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">15</div><div><div class="kicker">AI models</div><h2>Gemini vs Local AI — free setup</h2></div></div>
+  <p>Humare system mein AI do jagah se aa sakta hai. Ise <b>do drivers</b> ki tarah socho:</p>
+  <table>
+    <tr><th></th><th>☁️ Google Gemini (cloud)</th><th>💻 Local model — qwen3:8b via Ollama</th></tr>
+    <tr><td><b>Kahan chalta hai</b></td><td>Google ke servers par (internet chahiye)</td><td>Humare laptop ke GPU par (RTX 4060)</td></tr>
+    <tr><td><b>Quality</b></td><td><span class="pill p-green">Best</span> — sahi citations, achhi Hindi</td><td><span class="pill p-amber">Theek</span> — citations dheele, checker naram</td></tr>
+    <tr><td><b>Limit</b></td><td>Free tier: ~20 requests/din har model</td><td>Koi limit nahi</td></tr>
+    <tr><td><b>Kharcha</b></td><td>Free tier (billing nahi kiya)</td><td>₹0, offline bhi chalta hai</td></tr>
+    <tr><td><b>Speed</b></td><td>Kuch second</td><td>~2 minute per jawaab (test mein)</td></tr>
+  </table>
+
+  <h3>Free setup kaise kaam karta hai</h3>
+  <svg viewBox="0 0 760 200" role="img" aria-label="Fallback flow">
+    <defs><marker id="ar5" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <g font-size="11">
+      <rect x="5" y="75" width="120" height="50" rx="10" fill="#1E2761"/><text x="65" y="105" text-anchor="middle" fill="#fff" font-weight="700">AI ka kaam</text>
+      <polygon points="215,55 285,100 215,145 145,100" fill="#FFF7DB" stroke="#C99A1A"/>
+      <text x="215" y="96" text-anchor="middle" font-weight="700" fill="#8A6100">Pehle poocha</text>
+      <text x="215" y="110" text-anchor="middle" font-weight="700" fill="#8A6100">gaya tha?</text>
+      <rect x="300" y="5" width="150" height="44" rx="10" fill="#E8F6EF" stroke="#148A5B"/><text x="375" y="32" text-anchor="middle" font-weight="700" fill="#148A5B">Cache se turant</text>
+      <rect x="320" y="78" width="140" height="44" rx="10" fill="#1F6FD1"/><text x="390" y="105" text-anchor="middle" fill="#fff" font-weight="700">Gemini try karo</text>
+      <rect x="520" y="5" width="230" height="44" rx="10" fill="#E8F6EF" stroke="#148A5B"/><text x="635" y="32" text-anchor="middle" font-weight="700" fill="#148A5B">Mil gaya ✓ (save in cache)</text>
+      <rect x="520" y="140" width="230" height="54" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+      <text x="635" y="162" text-anchor="middle" font-weight="700" fill="#D95926">Quota khatam / overload?</text>
+      <text x="635" y="180" text-anchor="middle" fill="#1F2937">Gemini 1 ghanta pause → Local AI</text>
+    </g>
+    <g stroke="#1E2761" stroke-width="2" marker-end="url(#ar5)">
+      <line x1="125" y1="100" x2="143" y2="100"/>
+      <line x1="250" y1="78" x2="298" y2="35"/>
+      <line x1="285" y1="100" x2="318" y2="100"/>
+      <line x1="460" y1="92" x2="518" y2="35"/>
+      <line x1="460" y1="110" x2="518" y2="160"/>
+    </g>
+    <text x="262" y="50" font-size="10" fill="#148A5B" font-weight="700">haan</text>
+    <text x="292" y="92" font-size="10" fill="#5B6475">nahi</text>
+  </svg>
+  <div class="box tip"><b>Demo trick:</b> demo wale sawaal pehle se ek baar pooch lo jab Gemini ka quota bacha ho. Unke jawaab cache mein save ho jaate hain — demo ke din internet na bhi ho to bhi wahi achhe jawaab turant dikhenge.</div>
+  <p><b>Bulk kaam</b> (papers ko topic dena, test sawaal banana) hamesha local AI karta hai — taaki Gemini ka free quota bacha rahe. Isi tarah humne 44 papers tag kiye aur 75 test sawaal banaye, bilkul free.</p>
+</section>
+
+<!-- ============================== EVALUATION ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">16</div><div><div class="kicker">Proof</div><h2>Accuracy kaise naapte hain</h2></div></div>
+  <p>“Humara AI accurate hai” bolna aasaan hai. Hum <b>naap ke</b> batate hain. Iske liye ek <b>exam paper</b> banaya jaata hai jiske jawaab insaan ne khud asli pages par dhoondhe hain.</p>
+
+  <svg viewBox="0 0 760 140" role="img" aria-label="Evaluation flow">
+    <defs><marker id="ar6" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,4.5 L0,9 z" fill="#1E2761"/></marker></defs>
+    <g font-size="11">
+      <rect x="5" y="40" width="160" height="62" rx="10" fill="#EFEAFB" stroke="#5B3FA8"/>
+      <text x="85" y="64" text-anchor="middle" font-weight="700" fill="#5B3FA8">① Local AI sawaal</text>
+      <text x="85" y="82" text-anchor="middle" fill="#1F2937">banata hai (75)</text>
+      <rect x="200" y="40" width="170" height="62" rx="10" fill="#FDF0E9" stroke="#D95926"/>
+      <text x="285" y="64" text-anchor="middle" font-weight="700" fill="#D95926">② Team har sawaal</text>
+      <text x="285" y="82" text-anchor="middle" fill="#1F2937">scan par check karti</text>
+      <rect x="405" y="40" width="160" height="62" rx="10" fill="#EAF2FC" stroke="#1F6FD1"/>
+      <text x="485" y="64" text-anchor="middle" font-weight="700" fill="#1F6FD1">③ System se</text>
+      <text x="485" y="82" text-anchor="middle" fill="#1F2937">jawaab likhwao</text>
+      <rect x="600" y="40" width="155" height="62" rx="10" fill="#E8F6EF" stroke="#148A5B"/>
+      <text x="677" y="64" text-anchor="middle" font-weight="700" fill="#148A5B">④ Score nikalo</text>
+      <text x="677" y="82" text-anchor="middle" fill="#1F2937">2 numbers</text>
+    </g>
+    <g stroke="#1E2761" stroke-width="2" marker-end="url(#ar6)">
+      <line x1="165" y1="71" x2="198" y2="71"/><line x1="370" y1="71" x2="403" y2="71"/><line x1="565" y1="71" x2="598" y2="71"/>
+    </g>
+    <text x="285" y="125" text-anchor="middle" font-size="10" fill="#C0392B" font-weight="700">Sirf insaan-verified sawaal score mein count hote hain</text>
+  </svg>
+
+  <div class="grid2">
+    <div class="box good"><b>Score 1 — Citation accuracy</b><br>Jin sawaalon ka jawaab archive mein hai: kitne % jawaabon ne <b>sahi page</b> cite kiya jisme <b>sahi fact</b> likha hai?</div>
+    <div class="box good"><b>Score 2 — Refusal accuracy</b><br>Jin sawaalon ka jawaab archive mein <b>nahi</b> hai (Mars, cricket, novels…): kitne % par system ne sahi se <b>mana kiya</b>?</div>
+  </div>
+
+  <h3>Abhi tak ka status</h3>
+  <table>
+    <tr><th>Cheez</th><th>Status</th></tr>
+    <tr><td>Candidate sawaal (local AI se)</td><td><b>75</b> — 60 answerable (10 reports, 51 papers se), 15 bahar wale</td></tr>
+    <tr><td>Har candidate ka “expected fact” page par shabd-ba-shabd milna</td><td>✓ automatic filter (jo nahi mila, hata diya)</td></tr>
+    <tr><td>Team verification</td><td><span class="pill p-amber">Baaki</span> — ~1 ghanta, 2 log</td></tr>
+    <tr><td>Final scores</td><td><span class="pill p-grey">[__%] — verification ke baad</span></td></tr>
+  </table>
+
+  <h3>Candidate sawaalon ke real examples</h3>
+  <table>
+    <tr><th>Sawaal</th><th>Expected fact</th><th>Faisla</th></tr>
+    <tr><td>Who led the First Indian Expedition to Antarctica?</td><td>“Dr. S. Z. Qasim”</td><td><span class="pill p-green">Achha</span></td></tr>
+    <tr><td>What was used to collect ice samples from deeper layers?</td><td>“a 5 metre long, hand operated stainless steel corer”</td><td><span class="pill p-green">Achha</span></td></tr>
+    <tr><td>When did the ship sail off from Mauritius?</td><td>“1500 hours on 22nd”</td><td><span class="pill p-amber">Reword</span> — kaunsa expedition?</td></tr>
+    <tr><td>What are the ages of the samples collected?</td><td>“Ages of the samples collected…”</td><td><span class="pill p-red">Reject</span> — gol-gol jawaab</td></tr>
+  </table>
+  <div class="box tip">Score jo bhi aaye — 60% ho ya 90% — hum <b>imaandari se wahi</b> dikhayenge, failures ke saath. Scientists ki jury ke liye naapa hua imperfect number, bina naape “100% accurate” se zyada bharosemand hai.</div>
+</section>
+
+<!-- ============================== TECH ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">17</div><div><div class="kicker">Under the hood</div><h2>Technology — kaunsa tool kya karta hai</h2></div></div>
+  <p>Design jaan-boojh ke <b>chhota aur simple</b> rakha hai: ek Python backend, ek database, ek website. Student team ise reliably chala sake.</p>
+  <table>
+    <tr><th>Kaam</th><th>Tool</th><th>Aasaan bhasha mein</th></tr>
+    <tr><td>Reports lana</td><td>httpx, OAI-PMH, lxml</td><td>Internet se records copy karne wale “haath”</td></tr>
+    <tr><td>PDF padhna</td><td>PyMuPDF</td><td>PDF kholna, text aur page ki photo nikaalna</td></tr>
+    <tr><td>Scan padhna</td><td>Tesseract OCR 5.4</td><td>Photo mein likhe akshar pehchaanna</td></tr>
+    <tr><td>Data rakhna</td><td>PostgreSQL 16 (Docker)</td><td>Bada, bharosemand “register” — sab records, links, reviews</td></tr>
+    <tr><td>Meaning search</td><td>pgvector + multilingual-e5</td><td>Matlab ko numbers mein badal ke paas wale dhoondhna</td></tr>
+    <tr><td>Keyword search</td><td>PostgreSQL full-text</td><td>Exact shabd dhoondhna</td></tr>
+    <tr><td>AI likhna/check</td><td>Google Gemini / Ollama (qwen3:8b)</td><td>Cloud ya laptop par chalne wala AI</td></tr>
+    <tr><td>Backend (dimaag)</td><td>Python 3.12, FastAPI</td><td>Website aur database ke beech ka “waiter”</td></tr>
+    <tr><td>Website</td><td>Next.js, TypeScript, Tailwind</td><td>Jo screen aap dekhte ho</td></tr>
+    <tr><td>Security</td><td>JWT login, bcrypt, roles</td><td>Staff login, password safe, kaun kya kar sakta hai</td></tr>
+    <tr><td>Quality</td><td>pytest — 31 tests</td><td>Har baar code badle to apne aap jaanch</td></tr>
+    <tr><td>Code ka ghar</td><td>Git + GitHub</td><td>Har change ka record, team ke saath share</td></tr>
+  </table>
+
+  <h3>Data kaise juda hai (simple data model)</h3>
+  <svg viewBox="0 0 760 190" role="img" aria-label="Simple data model">
+    <g font-size="11">
+      <rect x="10" y="20" width="120" height="44" rx="8" fill="#1E2761"/><text x="70" y="47" text-anchor="middle" fill="#fff" font-weight="700">sources</text>
+      <rect x="170" y="20" width="120" height="44" rx="8" fill="#1F6FD1"/><text x="230" y="47" text-anchor="middle" fill="#fff" font-weight="700">items</text>
+      <rect x="330" y="20" width="120" height="44" rx="8" fill="#1F6FD1"/><text x="390" y="47" text-anchor="middle" fill="#fff" font-weight="700">pages</text>
+      <rect x="490" y="20" width="120" height="44" rx="8" fill="#1F6FD1"/><text x="550" y="47" text-anchor="middle" fill="#fff" font-weight="700">chunks</text>
+      <rect x="170" y="120" width="120" height="44" rx="8" fill="#128C7E"/><text x="230" y="147" text-anchor="middle" fill="#fff" font-weight="700">item_links</text>
+      <rect x="10" y="120" width="120" height="44" rx="8" fill="#128C7E"/><text x="70" y="140" text-anchor="middle" fill="#fff" font-weight="700">expeditions</text><text x="70" y="156" text-anchor="middle" fill="#fff">stations · topics</text>
+      <rect x="490" y="120" width="120" height="44" rx="8" fill="#5B3FA8"/><text x="550" y="147" text-anchor="middle" fill="#fff" font-weight="700">drafts</text>
+      <rect x="640" y="120" width="110" height="44" rx="8" fill="#D95926"/><text x="695" y="147" text-anchor="middle" fill="#fff" font-weight="700">reviews</text>
+      <rect x="640" y="20" width="110" height="44" rx="8" fill="#C0392B"/><text x="695" y="47" text-anchor="middle" fill="#fff" font-weight="700">audit_log</text>
+    </g>
+    <g stroke="#9DBCE8" stroke-width="2.5">
+      <line x1="130" y1="42" x2="170" y2="42"/><line x1="290" y1="42" x2="330" y2="42"/><line x1="450" y1="42" x2="490" y2="42"/>
+      <line x1="230" y1="64" x2="230" y2="120"/><line x1="170" y1="142" x2="130" y2="142"/>
+      <line x1="550" y1="64" x2="550" y2="120"/><line x1="610" y1="142" x2="640" y2="142"/>
+    </g>
+    <text x="560" y="98" font-size="10" fill="#5B6475">har sentence → chunk IDs (citations)</text>
+  </svg>
+</section>
+
+<!-- ============================== WHAT'S LEFT ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">18</div><div><div class="kicker">Roadmap</div><h2>Abhi kya bacha hai</h2></div></div>
+  <table>
+    <tr><th>Kaam</th><th>Kaun</th><th>Status</th></tr>
+    <tr><td>Archive: harvest, OCR, linking</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>Search, cited answers, refusal</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>AI drafts, fact-checker, Hindi, review</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>Website (public + staff), production build</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>Free AI setup (Gemini → local)</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>GitHub, PPT deck</td><td>Done</td><td><span class="pill p-green">✓</span></td></tr>
+    <tr><td>75 test sawaalon ka verification</td><td>Team</td><td><span class="pill p-amber">Baaki</span></td></tr>
+    <tr><td>Evaluation chalana, deck mein scores</td><td>Claude (verification ke baad)</td><td><span class="pill p-amber">Baaki</span></td></tr>
+    <tr><td>Demo video + rehearsal</td><td>Team</td><td><span class="pill p-amber">Baaki</span></td></tr>
+  </table>
+
+  <h3>Prototype ki seemaayein (honest limits) → future plan</h3>
+  <div class="grid2">
+    <div class="box warn"><b>Abhi</b>
+      <ul>
+        <li>30 mein se 10 reports poore padhe (baaki ke links hain)</li>
+        <li>YouTube videos, photo albums abhi nahi</li>
+        <li>NPDC datasets sirf link (permission baaki)</li>
+        <li>~1,000 machine links curator ki haan ka intezaar</li>
+        <li>Local AI Gemini se kamzor</li>
+      </ul></div>
+    <div class="box good"><b>Aage</b>
+      <ul>
+        <li>Saare reports + 31–45 ke digital reports NCPOR se</li>
+        <li>Video metadata + photo credits/licence</li>
+        <li>NPDC adapter (permission ke baad)</li>
+        <li>NCPOR library/NPDC staff curator bane</li>
+        <li>Polar &amp; Ocean Museum ke displays ko approved stories bhejna</li>
+      </ul></div>
+  </div>
+
+  <h3>Demo kaise chalta hai (5–7 minute)</h3>
+  <ol>
+    <li>DSpace par scanned report dikhao → humare app mein wahi report, expedition se judi, <b>bina kisi manual entry ke</b>.</li>
+    <li>Glacier wala sawaal → cited answer → <b>original page</b> par click.</li>
+    <li>“Mars rovers” → <b>mana</b>.</li>
+    <li>Lesson banao → red line dikhao → reviewer edit/delete karke <b>apne naam se approve</b> → English + Hindi publish.</li>
+    <li>Expedition announcement draft → approve.</li>
+    <li>Coverage page → kya missing hai.</li>
+    <li>Accuracy page → dono scores.</li>
+  </ol>
+</section>
+
+<!-- ============================== Q&A ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">19</div><div><div class="kicker">Prepare</div><h2>Judges ke possible sawaal + jawaab</h2></div></div>
+  <dl class="qa">
+    <dt>Q. Ye bhi to ek ChatGPT jaisa chatbot hai?</dt>
+    <dd>Nahi. Chatbot apni yaaddasht se kuch bhi bol deta hai. Humara system <b>sirf NCPOR ke pages</b> se likhta hai, har line ka page number deta hai, aur jawaab na mile to <b>mana</b> karta hai. Aur kuch bhi public hone se pehle insaan approve karta hai.</dd>
+    <dt>Q. Agar AI galat bole to?</dt>
+    <dd>Teen safety layers: (1) score 0.82 se kam to jawaab hi nahi, (2) fact-checker har line jaanchta hai, red line approval rok deti hai, (3) naam wala reviewer final faisla leta hai. Galti publish ho bhi jaaye to version history ke saath correction hota hai.</dd>
+    <dt>Q. NCPOR staff ko kitna extra kaam karna padega?</dt>
+    <dd>Data entry: <b>zero</b>. System khud harvest karta hai. Staff ka kaam sirf review hai — aur archive linking bina reviewer ke bhi kaam karti hai.</dd>
+    <dt>Q. Data kahan se aaya? Real hai?</dt>
+    <dd>100% real — NCPOR ka DSpace (OAI-PMH se) aur NCPOR ka news RSS feed. Har record ke saath uska original URL saved hai. Koi dummy data nahi.</dd>
+    <dt>Q. Purane scans to kharab honge, OCR galat padhega?</dt>
+    <dd>Humne naapa: 10 mein se 9 reports mein 68–92% pages ka text pehle se tha. OCR wale pages ka confidence score dikhta hai, aur har quote ke saath <b>asli scan</b> dikhta hai.</dd>
+    <dt>Q. Kharcha kitna hai?</dt>
+    <dd>Open-source stack, laptop CPU/GPU par chalta hai. AI free tier + local model — licence fee zero.</dd>
+    <dt>Q. Hindi kaise?</dt>
+    <dd>Approved English draft ka Hindi anuvaad AI banata hai (polar glossary ke saath), uski bhi jaanch aur alag approval hoti hai. Website ka interface English/हिन्दी toggle karta hai.</dd>
+    <dt>Q. Doosri teams se alag kya hai?</dt>
+    <dd>Asli NCPOR archive, zero data entry, sentence-level fact-check jo approval rokta hai, coverage view, aur <b>naapi hui accuracy</b>.</dd>
+    <dt>Q. Security?</dt>
+    <dd>Public sirf padh sakta hai. Staff login roles ke saath. Passwords encrypted (bcrypt). Audit log ko database level par badla ya mitaaya nahi ja sakta. Secret keys code mein nahi, sirf .env file mein.</dd>
+  </dl>
+</section>
+
+<!-- ============================== GLOSSARY ============================== -->
+<section class="page">
+  <div class="chapter"><div class="num">20</div><div><div class="kicker">Reference</div><h2>Shabdkosh (Glossary)</h2></div></div>
+  <table>
+    <tr><th style="width:24%">Shabd</th><th>Aasaan matlab</th></tr>
+    <tr><td><b>NCPOR</b></td><td>National Centre for Polar and Ocean Research, Goa — India ke polar expeditions chalane wali sanstha</td></tr>
+    <tr><td><b>ISEA</b></td><td>Indian Scientific Expedition to Antarctica — jaise ISEA-9 = 9th expedition</td></tr>
+    <tr><td><b>DSpace</b></td><td>NCPOR ki website jahan purani scanned reports rakhi hain</td></tr>
+    <tr><td><b>NPDC</b></td><td>National Polar Data Center — scientific datasets ki jagah</td></tr>
+    <tr><td><b>Harvesting</b></td><td>Doosri website se records apne aap copy karna</td></tr>
+    <tr><td><b>OAI-PMH</b></td><td>Libraries ka standard tareeka catalogue records share karne ka</td></tr>
+    <tr><td><b>robots.txt</b></td><td>Website ki file jo batati hai ki bots kya le sakte hain</td></tr>
+    <tr><td><b>OCR</b></td><td>Optical Character Recognition — photo mein likhe akshar padhna</td></tr>
+    <tr><td><b>Text layer</b></td><td>Scanned PDF ke andar chhupa hua, already padha hua text</td></tr>
+    <tr><td><b>Chunk / passage</b></td><td>Text ka chhota tukda (~1,500 akshar), hamesha ek hi page ka</td></tr>
+    <tr><td><b>Embedding</b></td><td>Text ka matlab 768 numbers mein — milte matlab = milte numbers</td></tr>
+    <tr><td><b>Hybrid search / RRF</b></td><td>Shabd-search + matlab-search ki rankings ko milana</td></tr>
+    <tr><td><b>Threshold</b></td><td>Seema-rekha — 0.82 se kam score par jawaab mana</td></tr>
+    <tr><td><b>LLM</b></td><td>Large Language Model — Gemini jaisa text likhne wala AI</td></tr>
+    <tr><td><b>RAG</b></td><td>Pehle dhoondo, phir sirf usi se likho</td></tr>
+    <tr><td><b>Citation</b></td><td>Saboot — kis report ke kis page se baat aayi</td></tr>
+    <tr><td><b>Fact-checker / faithfulness</b></td><td>Har line ko uske saboot se milana: supported / partly / not supported</td></tr>
+    <tr><td><b>Curator</b></td><td>Staff jo machine links ko haan/na karta hai</td></tr>
+    <tr><td><b>Reviewer</b></td><td>Staff jo AI drafts approve/reject/publish karta hai</td></tr>
+    <tr><td><b>Audit log</b></td><td>Har action ka record, jo badla ya mitaaya nahi ja sakta</td></tr>
+    <tr><td><b>Coverage view</b></td><td>Kis expedition ki kya cheez public hai — ek table mein</td></tr>
+    <tr><td><b>Cache</b></td><td>Pehle ke jawaab save — dobara poocho to turant, bina internet</td></tr>
+    <tr><td><b>Ollama</b></td><td>Laptop par AI model chalane ka free software</td></tr>
+    <tr><td><b>Free tier / quota</b></td><td>Free mein roz ki seemit (limited) requests</td></tr>
+    <tr><td><b>API</b></td><td>Programs ke aapas mein baat karne ka darwaaza</td></tr>
+    <tr><td><b>GIGW 3.0 / WCAG</b></td><td>Sarkaari websites ke accessibility aur security niyam</td></tr>
+  </table>
+  <p class="small center" style="margin-top:14px">Polar Knowledge Index · SIH 2026 · PS 26063 · Team Anarch · github.com/saransh2809/SIH26063-Polar-Knowledge-Index</p>
+</section>
+
+</body>
+</html>
