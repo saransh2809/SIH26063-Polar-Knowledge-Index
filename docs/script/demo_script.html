@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Polar Knowledge Index — Short Demo Script (~4 min)</title>
+<style>
+  @page { size: A4; margin: 18mm 20mm 18mm 20mm; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1F2937; font-size: 12.5pt; line-height: 1.55; margin: 0; }
+  h1 { color: #1E2761; font-size: 24pt; margin: 0 0 4px; line-height: 1.15; }
+  .sub { color: #5B6475; font-size: 10.5pt; margin-bottom: 18px; }
+  h2 { color: #1E2761; font-size: 14pt; margin: 20px 0 6px; break-after: avoid; }
+  h2 .t { color: #1F6FD1; font-weight: 600; font-size: 11pt; margin-left: 6px; }
+  p { margin: 0 0 8px; }
+  .say b { color: #1E2761; }
+  .cue { color: #6B7280; font-size: 9.5pt; font-style: italic; border-left: 3px solid #CBD5E1;
+         padding: 2px 0 2px 8px; margin: 2px 0 10px; break-inside: avoid; }
+  .cue::before { content: "On screen: "; font-weight: 700; font-style: normal; color: #5B6475; }
+  .fill { background: #FFF7DB; border: 1px solid #F0D58A; border-radius: 4px; padding: 0 4px; font-weight: 700; color: #8A6100; }
+  .close { font-weight: 700; color: #1E2761; font-size: 13.5pt; }
+  .note { margin-top: 22px; font-size: 9pt; color: #6B7280; border-top: 1px solid #E5E7EB; padding-top: 8px; }
+  section { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>Polar Knowledge Index: Short Demo Script (~4 min)</h1>
+<div class="sub">Team Anarch · SIH 2026 · PS 26063: Integrated Polar Science Outreach, Knowledge Repository and Media Dissemination Portal</div>
+
+<section>
+<h2>1. Intro <span class="t">(0:00 – 0:15)</span></h2>
+<p class="say">Namaste. We are Team Anarch, and this is the <b>Polar Knowledge Index</b>. Our idea in one line:
+every expedition, every page, every claim cited.</p>
+<div class="cue">Home page of the app; title and tagline.</div>
+</section>
+
+<section>
+<h2>2. The Problem and the Idea <span class="t">(0:15 – 0:50)</span></h2>
+<p class="say">NCPOR has more than forty years of Indian polar science: expedition reports, datasets, news and videos.
+But it sits in at least six separate systems that do not talk to each other. The old reports are scans that cannot
+be searched, and nothing turns them into lessons or outreach.</p>
+<p class="say">The Polar Knowledge Index does not ask NCPOR to type anything new. It <b>harvests what NCPOR already
+publishes</b>, reads it, links every item to its expedition, station, topic and year, and answers only from those
+pages, with the page as proof.</p>
+<div class="cue">Scanned report on NCPOR's DSpace, then the same report inside our app, linked to its expedition.</div>
+</section>
+
+<section>
+<h2>3. What It Does <span class="t">(0:50 – 1:30)</span></h2>
+<p class="say"><b>Harvest:</b> pulls expedition reports from NCPOR's DSpace archive through the standard OAI-PMH
+protocol, plus the NCPOR news feed, politely, one request a second, with originals left where they are.</p>
+<p class="say"><b>Read:</b> uses the PDF's own text layer, or OCR when there is none, and keeps the printed page
+number and the page image.</p>
+<p class="say"><b>Link:</b> ties every report, paper and news post to its expedition, station, topic and year.
+NCPOR's own catalogue gives confirmed links; anything inferred stays unconfirmed until a curator checks it.</p>
+<p class="say"><b>Answer:</b> hybrid search by words and by meaning. AI drafts answers, lessons and posts only from the
+retrieved pages, a fact-checker marks every sentence green, amber or red, and nothing is public until a named
+reviewer approves it.</p>
+<div class="cue">Expedition page ISEA-9: papers grouped by NCPOR's sections, "Confirmed" and "Unconfirmed" labels.</div>
+</section>
+
+<section>
+<h2>4. Live Demo <span class="t">(1:30 – 2:50)</span></h2>
+<p class="say">A student asks: <i>“Has India measured how the Dakshin Gangotri glacier is moving?”</i> Search finds the
+Ninth Expedition paper on the glacier's secular movement, printed page 248, and opens the original scan beside its
+text.</p>
+<p class="say">The cited answer draws on the 9th, 11th, 26th and 30th Expedition reports: the snout has been monitored
+since 1983, and it receded 81 centimetres in 2011. All four sentences are supported.</p>
+<p class="say">Ask <i>“How fast do Mars rovers drive?”</i> and it refuses: no NCPOR source found.</p>
+<p class="say">Now a Class 11 lesson on glaciers. The checker flags four sentences red, including <i>“glaciers are
+large bodies of ice that move slowly”</i>: true, but not in the sources. The reviewer deletes it, approves under their
+own name, and publishes in English and Hindi. Every step lands in an audit log that cannot be edited.</p>
+<p class="say">Finally, the coverage view: reports for the 7th and 8th expeditions are listed but unpublished, and
+twelve later expeditions are known only from NCPOR news.</p>
+<div class="cue">Search → page viewer → staff review of the answer (4 green) → Ask "Mars rovers" refusal →
+lesson with red sentences → delete, approve, publish, Hindi → coverage page.</div>
+</section>
+
+<section>
+<h2>5. Results <span class="t">(2:50 – 3:40)</span></h2>
+<p class="say">We harvested 32 expedition reports, 765 papers and 837 news posts, with zero new data entry. We read
+3,266 scanned pages from ten reports: nine already carried a text layer on most pages, and the one we fully OCR'd
+averaged 90 percent confidence. Every report and paper is linked to its expedition.</p>
+<p class="say">On a hand-verified test set, citation accuracy is <span class="fill">[__%]</span> and refusal accuracy
+is <span class="fill">[__%]</span>.</p>
+<p class="say">Honest limits: ten of thirty reports are read in full so far, and our free local model is weaker than
+Gemini, so a human reviewer always has the last word.</p>
+<div class="cue">Accuracy page with the two scores; failures listed below them.</div>
+</section>
+
+<section>
+<h2>6. Impact and Close <span class="t">(3:40 – 4:10)</span></h2>
+<p class="say">Teachers get Indian polar lessons, students get answers they can trust, outreach staff get drafts in
+minutes, and NCPOR leadership sees what has never been told to the public.</p>
+<p class="say">It runs on a laptop with open-source tools and free AI tiers, and plugs onto what NCPOR already runs.</p>
+<p class="close">Polar Knowledge Index. Every expedition, every page, every claim cited. Thank you.</p>
+<div class="cue">Home page, GitHub link.</div>
+</section>
+
+<div class="note">About 560 spoken words, around 4 minutes at a normal pace. Replace the two
+<span class="fill">[__%]</span> values with the scores from <code>python -m eval.run</code> after the test set is
+verified; do not record section 5 before that. Do the approval live, logged in as the reviewer.</div>
+
+</body>
+</html>
