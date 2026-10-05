@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>motion</title>
+<style>
+  :root { --navy:#0F1A45; --blue:#3B82F6; --sky:#9CC7FF; --orange:#F08A4B; --green:#34D399; --red:#F87171;
+          --ink:#E8EEFB; --muted:#9FB0CF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: var(--ink);
+         background: radial-gradient(1200px 700px at 78% 40%, #1E3A8A 0%, #0F1A45 55%, #070C22 100%); }
+  .scene { position: absolute; inset: 0; display: none; }
+  .scene.on { display: block; }
+  .rings span { position: absolute; border: 2px solid rgba(59,130,246,.35); border-radius: 50%;
+                left: 78%; top: 45%; transform: translate(-50%,-50%); animation: pulse 6s ease-in-out infinite; }
+  .rings span:nth-child(1){ width: 760px; height: 760px; } .rings span:nth-child(2){ width: 540px; height: 540px; animation-delay: .6s; }
+  .rings span:nth-child(3){ width: 320px; height: 320px; animation-delay: 1.2s; }
+  @keyframes pulse { 0%,100% { opacity: .35; } 50% { opacity: .8; } }
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .fade.in { opacity: 1; transform: none; }
+  .pop { opacity: 0; transform: scale(.6); transition: opacity .45s ease, transform .45s cubic-bezier(.2,1.4,.4,1); }
+  .pop.in { opacity: 1; transform: scale(1); }
+  h1 { font-size: 92px; font-weight: 800; letter-spacing: -1px; color: #fff; }
+  .kicker { font-size: 22px; letter-spacing: .32em; text-transform: uppercase; color: var(--sky); }
+  .tag { font-size: 42px; font-weight: 700; color: var(--sky); }
+  .muted { color: var(--muted); }
+  /* title */
+  #title .wrap { position: absolute; left: 120px; top: 230px; width: 1000px; }
+  #title .team { font-size: 26px; color: var(--orange); margin-top: 26px; }
+  /* card */
+  #card .num { position: absolute; left: 120px; top: 250px; font-size: 220px; font-weight: 900; color: rgba(59,130,246,.25); line-height: 1; }
+  #card .wrap { position: absolute; left: 140px; top: 420px; width: 1300px; }
+  #card .t { font-size: 76px; font-weight: 800; color: #fff; }
+  #card .s { font-size: 30px; color: var(--sky); margin-top: 14px; }
+  #card .bar { position: absolute; left: 140px; top: 640px; height: 6px; width: 0; background: linear-gradient(90deg, var(--orange), var(--blue));
+               border-radius: 3px; transition: width 1.6s ease; }
+  #card .bar.in { width: 520px; }
+  /* problem */
+  .years { position: absolute; left: 110px; top: 110px; }
+  .years .big { font-size: 150px; font-weight: 900; color: #fff; line-height: 1; }
+  .years .lbl { font-size: 30px; color: var(--sky); }
+  .kinds { position: absolute; left: 110px; top: 320px; width: 560px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .kinds div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 10px 22px; font-size: 24px; }
+  .systems { position: absolute; left: 760px; top: 90px; width: 760px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 70px 46px; }
+  .sys { background: rgba(15,26,69,.9); border: 2px solid rgba(156,199,255,.35); border-radius: 18px; padding: 18px; text-align: center; height: 130px;
+         display: flex; flex-direction: column; justify-content: center; }
+  .sys b { font-size: 25px; color: #fff; } .sys span { font-size: 17px; color: var(--muted); margin-top: 4px; }
+  .x { position: absolute; font-size: 46px; color: var(--red); font-weight: 900; }
+  .nolinks { position: absolute; left: 820px; top: 560px; width: 640px; text-align: center; background: rgba(248,113,113,.14);
+             border: 2px solid var(--red); border-radius: 16px; padding: 16px; font-size: 30px; font-weight: 700; color: #FECACA; }
+  .scanlock { position: absolute; left: 110px; top: 520px; width: 620px; display: flex; gap: 22px; align-items: center; }
+  .doc { width: 150px; height: 190px; background: #F3F4F7; border-radius: 6px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+  .doc i { position: absolute; left: 16px; right: 16px; height: 7px; background: #B8BFCC; border-radius: 3px; }
+  .doc .lock { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 70px; background: rgba(7,12,34,.45); }
+  .scanlock p { font-size: 28px; line-height: 1.35; }
+  /* stats */
+  .stats { position: absolute; left: 100px; top: 150px; width: 1400px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .stat { background: rgba(255,255,255,.06); border: 1px solid rgba(156,199,255,.25); border-radius: 22px; padding: 26px 20px; text-align: center; }
+  .stat .n { font-size: 74px; font-weight: 900; color: #fff; line-height: 1.05; }
+  .stat .l { font-size: 22px; color: var(--sky); margin-top: 6px; }
+  .stat.zero .n { color: var(--green); }
+  .stats2 { position: absolute; left: 100px; top: 420px; width: 1400px; display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 26px; }
+  .measure { position: absolute; left: 100px; top: 640px; width: 1400px; background: rgba(52,211,153,.12); border: 2px solid rgba(52,211,153,.55);
+             border-radius: 18px; padding: 18px 26px; font-size: 27px; }
+  .measure b { color: var(--green); }
+  .limits { position: absolute; left: 100px; top: 770px; width: 1400px; display: flex; gap: 14px; }
+  .limits div { background: rgba(240,138,75,.14); border: 1px solid rgba(240,138,75,.6); color: #FED7AA; border-radius: 999px; padding: 9px 20px; font-size: 21px; }
+  /* impact */
+  .who { position: absolute; left: 100px; top: 120px; width: 1400px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .who div { background: rgba(255,255,255,.06); border: 1px solid rgba(156,199,255,.25); border-radius: 22px; padding: 26px 18px; text-align: center; }
+  .who .e { font-size: 70px; } .who b { display: block; font-size: 28px; color: #fff; margin-top: 8px; } .who span { font-size: 21px; color: var(--sky); }
+  .chips { position: absolute; left: 100px; top: 420px; display: flex; gap: 16px; flex-wrap: wrap; width: 1400px; }
+  .chips div { background: rgba(59,130,246,.16); border: 1px solid rgba(59,130,246,.6); border-radius: 999px; padding: 12px 24px; font-size: 25px; }
+  .road { position: absolute; left: 100px; top: 610px; width: 1400px; display: flex; align-items: center; }
+  .road .step { flex: 1; background: rgba(15,26,69,.9); border: 2px solid rgba(156,199,255,.35); border-radius: 16px; padding: 18px; text-align: center; }
+  .road .step b { display: block; font-size: 25px; color: #fff; } .road .step span { font-size: 19px; color: var(--muted); }
+  .road .step.done { border-color: var(--green); } .road .step.done b { color: var(--green); }
+  .road .arr { width: 50px; text-align: center; font-size: 34px; color: var(--sky); }
+  .vision { position: absolute; left: 100px; top: 545px; font-size: 26px; color: var(--sky); letter-spacing: .2em; text-transform: uppercase; }
+  /* end */
+  #end .wrap { position: absolute; left: 0; right: 0; top: 250px; text-align: center; }
+  #end .gh { font-size: 32px; color: var(--orange); margin-top: 34px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="rings"><span></span><span></span><span></span></div>
+
+<section id="title" class="scene">
+  <div class="wrap">
+    <div class="kicker fade">Smart India Hackathon 2026 · PS 26063</div>
+    <h1 class="fade" style="margin-top:14px">Polar Knowledge Index</h1>
+    <div class="tag fade" style="margin-top:18px">Every expedition. Every page. Every claim cited.</div>
+    <div class="team fade">Team Anarch</div>
+  </div>
+</section>
+
+<section id="card" class="scene">
+  <div class="num fade"></div>
+  <div class="wrap"><div class="kicker fade">Section</div><div class="t fade"></div><div class="s fade"></div></div>
+  <div class="bar"></div>
+</section>
+
+<section id="problem" class="scene">
+  <div class="years fade"><div class="big"><span id="yrs">0</span>+</div><div class="lbl">years of Indian polar science at NCPOR</div></div>
+  <div class="kinds"><div class="pop">📘 Expedition reports</div><div class="pop">📊 Datasets</div><div class="pop">📰 News</div><div class="pop">🎬 Videos</div></div>
+  <div class="systems">
+    <div class="sys pop"><b>Main website</b><span>news, station pages</span></div>
+    <div class="sys pop"><b>DSpace</b><span>scanned reports</span></div>
+    <div class="sys pop"><b>NPDC</b><span>datasets</span></div>
+    <div class="sys pop"><b>MET-Data</b><span>weather stations</span></div>
+    <div class="sys pop"><b>Library</b><span>publications</span></div>
+    <div class="sys pop"><b>YouTube / social</b><span>videos, posts</span></div>
+  </div>
+  <div class="x pop" style="left:985px;top:135px">✗</div><div class="x pop" style="left:1255px;top:135px">✗</div>
+  <div class="x pop" style="left:985px;top:335px">✗</div><div class="x pop" style="left:1255px;top:335px">✗</div>
+  <div class="x pop" style="left:870px;top:236px">✗</div><div class="x pop" style="left:1140px;top:236px">✗</div><div class="x pop" style="left:1410px;top:236px">✗</div>
+  <div class="nolinks fade">6 systems · 0 links between them</div>
+  <div class="scanlock fade">
+    <div class="doc"><i style="top:24px"></i><i style="top:44px"></i><i style="top:64px;right:50px"></i><i style="top:94px"></i><i style="top:114px"></i><i style="top:134px;right:40px"></i><i style="top:164px"></i><div class="lock">🔒</div></div>
+    <p>Old reports are <b style="color:#FECACA">scans</b>, not searchable,<br>and never turned into <b style="color:#FECACA">lessons</b> or <b style="color:#FECACA">outreach</b></p>
+  </div>
+</section>
+
+<section id="stats" class="scene">
+  <div class="kicker fade" style="position:absolute;left:100px;top:84px">Results · real archive, zero new data entry</div>
+  <div class="stats">
+    <div class="stat pop"><div class="n" data-to="32">0</div><div class="l">expedition reports</div></div>
+    <div class="stat pop"><div class="n" data-to="765">0</div><div class="l">papers</div></div>
+    <div class="stat pop"><div class="n" data-to="837">0</div><div class="l">news posts</div></div>
+    <div class="stat zero pop"><div class="n">0</div><div class="l">new records typed by staff</div></div>
+  </div>
+  <div class="stats2">
+    <div class="stat pop"><div class="n" data-to="3266">0</div><div class="l">scanned pages read (10 reports)</div></div>
+    <div class="stat pop"><div class="n">9 / 10</div><div class="l">reports with a text layer on most pages</div></div>
+    <div class="stat pop"><div class="n" data-to="90" data-suffix="%">0</div><div class="l">mean OCR confidence, fully OCR'd report</div></div>
+  </div>
+  <div class="measure fade">✔ <b>Measured, not claimed:</b> 75-question hand-verified test set → <b>citation accuracy</b> and <b>refusal accuracy</b></div>
+  <div class="limits">
+    <div class="pop">Honest limit: 10 of 30 reports read in full so far</div>
+    <div class="pop">Free local model weaker than Gemini</div>
+    <div class="pop">A human reviewer always has the last word</div>
+  </div>
+</section>
+
+<section id="impact" class="scene">
+  <div class="kicker fade" style="position:absolute;left:100px;top:64px">Who benefits</div>
+  <div class="who">
+    <div class="pop"><div class="e">🧑‍🏫</div><b>Teachers</b><span>Indian polar lessons</span></div>
+    <div class="pop"><div class="e">🎓</div><b>Students</b><span>answers they can trust</span></div>
+    <div class="pop"><div class="e">📣</div><b>Outreach staff</b><span>drafts in minutes</span></div>
+    <div class="pop"><div class="e">🏛️</div><b>NCPOR leadership</b><span>what was never told</span></div>
+  </div>
+  <div class="chips">
+    <div class="pop">💻 Runs on a laptop</div><div class="pop">🔓 Open-source tools</div><div class="pop">🆓 Free AI tiers</div><div class="pop">🔌 Plugs onto what NCPOR already runs</div>
+  </div>
+  <div class="vision fade">Vision</div>
+  <div class="road">
+    <div class="step done pop"><b>Prototype ✓</b><span>real DSpace + news</span></div><div class="arr pop">➜</div>
+    <div class="step pop"><b>Full archive</b><span>all reports, 31–45 digitally</span></div><div class="arr pop">➜</div>
+    <div class="step pop"><b>NCPOR curators</b><span>library &amp; NPDC staff</span></div><div class="arr pop">➜</div>
+    <div class="step pop"><b>Polar &amp; Ocean Museum</b><span>approved stories on display</span></div>
+  </div>
+</section>
+
+<section id="end" class="scene">
+  <div class="wrap">
+    <h1 class="fade">Polar Knowledge Index</h1>
+    <div class="tag fade" style="margin-top:20px">Every expedition. Every page. Every claim cited.</div>
+    <div class="fade muted" style="font-size:28px;margin-top:30px">Team Anarch · Smart India Hackathon 2026 · PS 26063</div>
+    <div class="gh fade">github.com/saransh2809/SIH26063-Polar-Knowledge-Index</div>
+  </div>
+</section>
+
+<script>
+const q = new URLSearchParams(location.search);
+const scene = q.get("scene") || "title";
+document.getElementById(scene).classList.add("on");
+const S = document.getElementById(scene);
+const show = (sel, gap = 120) => [...S.querySelectorAll(sel)].forEach((el, i) => setTimeout(() => el.classList.add("in"), i * gap));
+function count(el, to, ms = 1400) {
+  const suf = el.dataset.suffix || "", t0 = performance.now();
+  const tick = now => { const k = Math.min(1, (now - t0) / ms), v = Math.round(to * (1 - Math.pow(1 - k, 3)));
+    el.textContent = v.toLocaleString("en-IN") + suf; if (k < 1) requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+}
+if (scene === "card") {
+  S.querySelector(".num").textContent = q.get("n"); S.querySelector(".t").textContent = q.get("t");
+  S.querySelector(".s").textContent = q.get("s") || "";
+}
+// step(i) is called by the recorder at the start of each narration sentence.
+const STEPS = {
+  title: [() => show(".fade", 450)],
+  card: [() => { show(".fade", 160); S.querySelector(".bar").classList.add("in"); }],
+  problem: [
+    () => { show(".years"); count(document.getElementById("yrs"), 40); setTimeout(() => show(".kinds .pop", 260), 500); },
+    () => { show(".sys", 180); setTimeout(() => { show(".x", 120); setTimeout(() => show(".nolinks"), 900); }, 1300); },
+    () => show(".scanlock"),
+  ],
+  stats: [
+    () => { show(".kicker"); show(".stats .pop", 200); S.querySelectorAll(".stats .n[data-to]").forEach(n => count(n, +n.dataset.to)); },
+    () => { show(".stats2 .pop", 300); S.querySelectorAll(".stats2 .n[data-to]").forEach(n => count(n, +n.dataset.to, 1800)); },
+    () => show(".measure"),
+    () => show(".limits .pop", 450),
+  ],
+  impact: [
+    () => { show(".kicker"); show(".who .pop", 350); },
+    () => show(".chips .pop", 300),
+    () => { show(".vision"); show(".road .pop", 260); },
+  ],
+  end: [() => show(".fade", 400)],
+};
+window.step = i => (STEPS[scene][i] || (() => {}))();
+</script>
+</body>
+</html>

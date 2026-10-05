@@ -202,6 +202,7 @@ export default function ReviewDraft({ params }: { params: Promise<{ id: string }
               <button disabled={!!busy} onClick={() => act("translate", async () => {
                 const hi = await clientFetch<Draft>(`/staff/drafts/${draft.id}/translate`, { method: "POST" });
                 router.push(`/staff/review/${hi.id}`);
+                return hi; // show the Hindi draft now; reloading the English one here raced the navigation
               })} className="rounded border border-accent px-4 py-2 text-accent disabled:opacity-50 cursor-pointer">
                 {busy === "translate" ? "Translating…" : "Draft Hindi version"}
               </button>

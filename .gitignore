@@ -36,3 +36,12 @@ data/eval_latest.json
 .claude/
 data/logs/
 docs/explainer/render/
+
+# Demo video build artefacts (rebuild with presentation/video/build_video.py)
+presentation/video/raw/
+presentation/video/clips/
+presentation/video/audio/
+presentation/video/check/
+presentation/video/clips.txt
+presentation/video/demo_state.json
+*.mp4
